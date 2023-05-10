@@ -1,5 +1,6 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CryptosContextProvider from "./stores/crypto-context";
 
 import Dashboard from "./pages/Dashboard";
 import Detail from "./pages/Detail";
@@ -10,7 +11,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CryptosContextProvider>
+      <RouterProvider router={router} />
+    </CryptosContextProvider>
+  );
 }
 
 export default App;

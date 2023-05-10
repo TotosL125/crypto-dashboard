@@ -2,7 +2,7 @@ import React, { FC } from "react";
 
 import DashboardListItem from "./DashboardListItem";
 
-import { dataObj } from "../pages/Dashboard";
+import dataObj from "../assets/dataType";
 
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
   return (
