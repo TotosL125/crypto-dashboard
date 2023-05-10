@@ -6,7 +6,7 @@ import Detail from "./pages/Detail";
 
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard /> },
-  { path: "/id/details", element: <Detail /> },
+  { path: "/:id/detail", element: <Detail /> },
 ]);
 
 function App() {
