@@ -8,6 +8,8 @@ import ActionButton from "../components/ActionButton";
 
 import { CryptosContext } from "../stores/crypto-context";
 
+import styles from "./styles/Dashboard.module.css";
+
 const Dashboard: FC = () => {
   const cryptosCtx = useContext(CryptosContext);
 
