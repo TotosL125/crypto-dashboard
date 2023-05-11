@@ -2,7 +2,7 @@ import React, { FC, useContext } from "react";
 
 import DashboardList from "../features/DashboardList";
 
-import Header from "../components/Header";
+import Title from "../components/Title";
 import RouteButton from "../components/RouteButton";
 import ActionButton from "../components/ActionButton";
 
@@ -21,7 +21,7 @@ const Dashboard: FC = () => {
 
   return (
     <div>
-      <Header title="Dashboard" />
+      <Title title="Dashboard" />
       <RouteButton title="Detail" path="/id/details" />
       <ActionButton title="Refresh" onClick={sendRequest} />
       <DashboardList currencies={cryptosCtx.cryptos} />

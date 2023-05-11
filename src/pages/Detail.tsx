@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 
-import Header from "../components/Header";
+import Title from "../components/Title";
 import RouteButton from "../components/RouteButton";
 
 const Detail: FC = () => {
   return (
     <div>
       <RouteButton title="Dash" path="/" />
-      <Header title="Details" />
+      <Title title="Details" />
     </div>
   );
 };
