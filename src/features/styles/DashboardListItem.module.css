@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--primary);
+
+  border-radius: 2px;
+}
+
+.item:hover,
+.item:active {
+  background: var(--primary_accent);
+}
