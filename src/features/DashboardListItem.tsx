@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 import dataObj from "../assets/dataType";
+import Text from "../components/Text";
 
 import styles from "./styles/DashboardListItem.module.css";
 
@@ -17,9 +18,9 @@ const DashboardListItem: FC<dataObj> = (props) => {
   return (
     <Link to={`/${props.id}/detail`}>
       <li className={styles.item}>
-        <p className={styles.text}>{props.symbol}</p>
-        <p className={styles.text}>{props.name}</p>
-        <p className={styles.text}>{props.current_price} ZAR</p>
+        <Text text={props.symbol} />
+        <Text text={props.name} />
+        <Text text={`${props.current_price} ZAR`} />
         <p className={priceChangeClass}>{props.price_change_percentage_24h}%</p>
       </li>
     </Link>

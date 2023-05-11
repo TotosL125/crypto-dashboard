@@ -1,0 +1,9 @@
+.container {
+  flex: 1 0 fit-content;
+  text-align: center;
+}
+
+.container p {
+  font-weight: bold;
+  color: var(--text);
+}
