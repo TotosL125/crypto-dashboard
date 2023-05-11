@@ -22,7 +22,7 @@
   height: 64%;
 
   background-color: var(--primary_accent);
-  color: white;
+  color: var(--text);
 
   box-shadow: 2rem var(--primary_accent);
 }

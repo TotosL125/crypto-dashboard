@@ -4,6 +4,9 @@
   justify-content: space-between;
   align-items: center;
 
+  padding-left: 2vw;
+  padding-right: 2vw;
+
   background: var(--primary);
 
   border-radius: 2px;
@@ -14,4 +17,19 @@
 .item:hover,
 .item:active {
   background: var(--primary_accent);
+}
+
+.text {
+  font-weight: bold;
+  color: var(--text);
+}
+
+.price_change_inc {
+  font-weight: bold;
+  color: var(--inc);
+}
+
+.price_change_dec {
+  font-weight: bold;
+  color: var(--dec);
 }
