@@ -1,0 +1,14 @@
+.container {
+  flex: 1 0 fit-content;
+  text-align: center;
+}
+
+.inc {
+  font-weight: bold;
+  color: var(--inc);
+}
+
+.dec {
+  font-weight: bold;
+  color: var(--dec);
+}
