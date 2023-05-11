@@ -6,7 +6,7 @@ type menuItem = {
   value: string | number;
 };
 
-const DetailsMenuItem: FC<menuItem> = (props) => {
+const DetailMenuItem: FC<menuItem> = (props) => {
   return (
     <li>
       <div>
@@ -17,4 +17,4 @@ const DetailsMenuItem: FC<menuItem> = (props) => {
   );
 };
 
-export default DetailsMenuItem;
+export default DetailMenuItem;

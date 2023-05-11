@@ -16,7 +16,6 @@ const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
         {props.currencies.map((currency) => (
           <DashboardListItem
             key={currency.id}
-            id={currency.id}
             symbol={currency.symbol}
             name={currency.name}
             currentPrice={currency.current_price}

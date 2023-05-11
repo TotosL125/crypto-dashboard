@@ -7,7 +7,6 @@ import Text from "../components/Text";
 import TextNumber from "../components/TextNumber";
 
 type data = {
-  id: string;
   symbol: string;
   name: string;
   currentPrice: number;
@@ -18,7 +17,7 @@ type data = {
 
 const DashboardListItem: FC<data> = (props) => {
   return (
-    <Link to={`/${props.id}/detail`}>
+    <Link to={`/${props.symbol}/detail`}>
       <li>
         <Text text={props.symbol} />
         <Text text={props.name} />
