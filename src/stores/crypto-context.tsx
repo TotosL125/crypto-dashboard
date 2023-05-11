@@ -3,6 +3,11 @@ import useRequest from "../hooks/use-request";
 
 import dataObj from "../assets/dataType";
 
+const DUMMY_DATA = [
+  { id: "bitcoin", symbol: "btc", name: "Bitcoin" },
+  { id: "ethereum", symbol: "eth", name: "Ethereum" },
+];
+
 type contextObj = {
   cryptos: dataObj[];
   sendRequestHandler: (url: string) => void;
@@ -14,7 +19,7 @@ export const CryptosContext = createContext<contextObj>({
 });
 
 const CryptosContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
-  const [cryptos, setCryptos] = useState<dataObj[]>([]);
+  const [cryptos, setCryptos] = useState<dataObj[]>(DUMMY_DATA);
 
   const sendRequest = useRequest();
 

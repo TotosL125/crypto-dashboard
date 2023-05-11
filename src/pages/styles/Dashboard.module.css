@@ -1,8 +1,20 @@
+.background {
+  display: flex;
+  flex-direction: column;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: linear-gradient(var(--primary), var(--secondary));
+}
+
 .header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
+  height: 20%;
 
   padding-left: 2rem;
-  padding-right: 2rem;
 }

@@ -1,7 +1,9 @@
 :root {
   --primary: black;
-  --secondary: blue;
+  --secondary: darkblue;
   --tertiary: gold;
+  --primary_accent: darkgrey;
+  --secondary_accent: blue;
   --inc: green;
   --dec: red;
 }

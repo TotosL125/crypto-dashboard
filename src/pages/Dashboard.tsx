@@ -1,4 +1,4 @@
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, useContext } from "react";
 
 import DashboardList from "../features/DashboardList";
 
@@ -19,13 +19,13 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <Fragment>
+    <div className={styles.background}>
       <header className={styles.header}>
         <Title title="Dashboard" />
         <ActionButton title="Refresh" onClick={sendRequest} />
       </header>
       <DashboardList currencies={cryptosCtx.cryptos} />
-    </Fragment>
+    </div>
   );
 };
 
