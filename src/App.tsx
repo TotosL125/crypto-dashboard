@@ -5,6 +5,8 @@ import CryptosContextProvider from "./stores/crypto-context";
 import Dashboard from "./pages/Dashboard";
 import Detail from "./pages/Detail";
 
+import "./colours.css";
+
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard /> },
   { path: "/:id/detail", element: <Detail /> },
