@@ -5,12 +5,10 @@ import dataObj from "../assets/dataType";
 import Text from "../components/Text";
 import TextNumber from "../components/TextNumber";
 
-import styles from "./styles/DashboardListItem.module.css";
-
 const DashboardListItem: FC<dataObj> = (props) => {
   return (
     <Link to={`/${props.id}/detail`}>
-      <li className={styles.item}>
+      <li>
         <Text text={props.symbol} />
         <Text text={props.name} />
         <Text text={`${props.current_price} ZAR`} />

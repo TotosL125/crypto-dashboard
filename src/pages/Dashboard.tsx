@@ -7,8 +7,6 @@ import ActionButton from "../components/ActionButton";
 
 import { CryptosContext } from "../stores/crypto-context";
 
-import styles from "./styles/Dashboard.module.css";
-
 const Dashboard: FC = () => {
   const cryptosCtx = useContext(CryptosContext);
 
@@ -19,8 +17,8 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <div className={styles.background}>
-      <header className={styles.header}>
+    <div>
+      <header>
         <Title title="Dashboard" />
         <ActionButton title="Refresh" onClick={sendRequest} />
       </header>

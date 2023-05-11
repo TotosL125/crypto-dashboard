@@ -3,22 +3,24 @@ import useRequest from "../hooks/use-request";
 
 import dataObj from "../assets/dataType";
 
-const DUMMY_DATA = [
-  {
-    id: "bitcoin",
-    symbol: "btc",
-    name: "Bitcoin",
-    current_price: 125000,
-    price_change_percentage_24h: 0.25,
-  },
-  {
-    id: "ethereum",
-    symbol: "eth",
-    name: "Ethereum",
-    current_price: 63000,
-    price_change_percentage_24h: -2.5,
-  },
-];
+// const DUMMY_DATA = [
+//   {
+//     id: "bitcoin",
+//     symbol: "btc",
+//     name: "Bitcoin",
+//     current_price: 125000,
+//     price_change_percentage_24h: 0.25,
+//   },
+//   {
+//     id: "ethereum",
+//     symbol: "eth",
+//     name: "Ethereum",
+//     current_price: 63000,
+//     price_change_percentage_24h: -2.5,
+//   },
+// ];
+
+const DUMMY_DATA: dataObj[] = [];
 
 type contextObj = {
   cryptos: dataObj[];
