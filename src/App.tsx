@@ -1,10 +1,12 @@
+// library imports
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import CryptosContextProvider from "./stores/crypto-context";
 
+// page imports
 import Dashboard from "./pages/Dashboard";
 import Detail from "./pages/Detail";
 
+// other imports
 import "./colours.css";
 
 const router = createBrowserRouter([
@@ -13,11 +15,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <CryptosContextProvider>
-      <RouterProvider router={router} />
-    </CryptosContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
