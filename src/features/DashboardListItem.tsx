@@ -19,8 +19,8 @@ const DashboardListItem: FC<dataObj> = (props) => {
       <li className={styles.item}>
         <p className={styles.text}>{props.symbol}</p>
         <p className={styles.text}>{props.name}</p>
-        <p className={styles.text}>{props.current_price}</p>
-        <p className={priceChangeClass}>{props.price_change_percentage_24h}</p>
+        <p className={styles.text}>{props.current_price} ZAR</p>
+        <p className={priceChangeClass}>{props.price_change_percentage_24h}%</p>
       </li>
     </Link>
   );

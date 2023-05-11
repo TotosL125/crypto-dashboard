@@ -11,6 +11,6 @@
 }
 
 .container ul {
-  list-style: none;
+  list-style-type: no-bullet;
   padding: 0;
 }

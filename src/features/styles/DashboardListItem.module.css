@@ -22,14 +22,20 @@
 .text {
   font-weight: bold;
   color: var(--text);
+
+  text-align: center;
 }
 
 .price_change_inc {
   font-weight: bold;
   color: var(--inc);
+
+  text-align: center;
 }
 
 .price_change_dec {
   font-weight: bold;
   color: var(--dec);
+
+  text-align: center;
 }
