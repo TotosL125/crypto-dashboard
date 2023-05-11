@@ -1,9 +1,8 @@
-import React, { FC, useContext } from "react";
+import React, { FC, Fragment, useContext } from "react";
 
 import DashboardList from "../features/DashboardList";
 
 import Title from "../components/Title";
-import RouteButton from "../components/RouteButton";
 import ActionButton from "../components/ActionButton";
 
 import { CryptosContext } from "../stores/crypto-context";
@@ -20,12 +19,13 @@ const Dashboard: FC = () => {
   };
 
   return (
-    <div>
-      <Title title="Dashboard" />
-      <RouteButton title="Detail" path="/id/details" />
-      <ActionButton title="Refresh" onClick={sendRequest} />
+    <Fragment>
+      <header className={styles.header}>
+        <Title title="Dashboard" />
+        <ActionButton title="Refresh" onClick={sendRequest} />
+      </header>
       <DashboardList currencies={cryptosCtx.cryptos} />
-    </div>
+    </Fragment>
   );
 };
 
