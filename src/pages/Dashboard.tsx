@@ -23,9 +23,10 @@ const Dashboard: FC = () => {
   return (
     <div>
       <header>
-        <Title title="Dashboard" />
         <ActionButton title="Refresh" onClick={sendRequest} />
+        <ActionButton title="Settings" onClick={sendRequest} />
       </header>
+      <Title title="Dashboard" />
       <DashboardList currencies={cryptosCtx.cryptos} />
     </div>
   );
