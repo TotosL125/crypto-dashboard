@@ -2,6 +2,7 @@
 import React, { FC } from "react";
 
 // feature imports
+import DashboardListHeader from "./DashboardListHeader";
 import DashboardListItem from "./DashboardListItem";
 
 // other imports
@@ -10,6 +11,7 @@ import dataObj from "../assets/dataType";
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
   return (
     <div>
+      <DashboardListHeader />
       <ul>
         {props.currencies.map((currency) => (
           <DashboardListItem
