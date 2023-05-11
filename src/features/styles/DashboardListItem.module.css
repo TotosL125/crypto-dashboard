@@ -7,6 +7,8 @@
   background: var(--primary);
 
   border-radius: 2px;
+
+  text-align: center;
 }
 
 .item:hover,

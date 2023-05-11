@@ -1,0 +1,9 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container ul {
+  list-style: none;
+  padding: 0;
+}
