@@ -22,7 +22,7 @@ const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
             currentPrice={currency.current_price}
             priceChange={currency.price_change_percentage_24h}
             marketCap={currency.market_cap}
-            marketCapChange={currency.market_cap_percentage_24h}
+            marketCapChange={currency.market_cap_change_percentage_24h}
           />
         ))}
       </ul>

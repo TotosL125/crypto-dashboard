@@ -23,12 +23,9 @@ const DashboardListItem: FC<data> = (props) => {
         <Text text={props.symbol} />
         <Text text={props.name} />
         <Text text={`${props.currentPrice} ZAR`} />
-        <TextNumber text={`${props.priceChange}%`} num={props.priceChange} />
+        <TextNumber num={props.priceChange} />
         <Text text={`${props.marketCap} ZAR`} />
-        <TextNumber
-          text={`${props.marketCapChange}%`}
-          num={props.marketCapChange}
-        />
+        <TextNumber num={props.marketCapChange} />
       </li>
     </Link>
   );

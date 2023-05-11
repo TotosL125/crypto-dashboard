@@ -1,16 +1,9 @@
 import React, { FC } from "react";
 
-const TextNumber: FC<{ text: string; num: number }> = (props) => {
-  let numStyle: string;
-
-  if (props.num > 0) {
-    numStyle = ``;
-  } else {
-    numStyle = ``;
-  }
+const TextNumber: FC<{ num: number }> = (props) => {
   return (
     <div>
-      <p className={numStyle}>{props.text}</p>
+      <p>{props.num}%</p>
     </div>
   );
 };

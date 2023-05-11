@@ -20,11 +20,15 @@ const Dashboard: FC = () => {
     );
   };
 
+  const openSettings = () => {
+    console.log("Add settings");
+  };
+
   return (
     <div>
       <header>
         <ActionButton title="Refresh" onClick={sendRequest} />
-        <ActionButton title="Settings" onClick={sendRequest} />
+        <ActionButton title="Settings" onClick={openSettings} />
       </header>
       <Title title="Dashboard" />
       <DashboardList currencies={cryptosCtx.cryptos} />
