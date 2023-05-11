@@ -1,7 +1,10 @@
+// library imports
 import React, { FC } from "react";
 
+// feature imports
 import DashboardListItem from "./DashboardListItem";
 
+// other imports
 import dataObj from "../assets/dataType";
 
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
@@ -14,8 +17,10 @@ const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
             id={currency.id}
             symbol={currency.symbol}
             name={currency.name}
-            current_price={currency.current_price}
-            price_change_percentage_24h={currency.price_change_percentage_24h}
+            currentPrice={currency.current_price}
+            priceChange={currency.price_change_percentage_24h}
+            marketCap={currency.market_cap}
+            marketCapChange={currency.market_cap_percentage_24h}
           />
         ))}
       </ul>

@@ -1,10 +1,14 @@
+// library imports
 import React, { FC, useContext } from "react";
 
+// feature imports
 import DashboardList from "../features/DashboardList";
 
+// component imports
 import Title from "../components/Title";
 import ActionButton from "../components/ActionButton";
 
+// other imports
 import { CryptosContext } from "../stores/crypto-context";
 
 const Dashboard: FC = () => {
