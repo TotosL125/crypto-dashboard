@@ -3,6 +3,7 @@ import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // page imports
+import RootLayout from "./layouts/RootLayout";
 import Dashboard from "./pages/Dashboard";
 import Detail from "./pages/Detail";
 
@@ -10,8 +11,14 @@ import Detail from "./pages/Detail";
 import "./colours.css";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Dashboard /> },
-  { path: "/:id/detail", element: <Detail /> },
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Dashboard /> },
+      { path: ":id/detail", element: <Detail /> },
+    ],
+  },
 ]);
 
 function App() {
