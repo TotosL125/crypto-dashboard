@@ -7,7 +7,7 @@ const Backdrop: FC<{ onClick: () => void }> = (props) => {
 };
 
 const Overlay: FC<{ content: ReactNode }> = (props) => {
-  return <div>(props.content)</div>;
+  return <div>{props.content}</div>;
 };
 
 const Modal: FC<{ content: ReactNode; onClick: () => void }> = (props) => {

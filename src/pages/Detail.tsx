@@ -24,7 +24,7 @@ const Detail: FC = () => {
     <div>
       <header>
         <Link to="/">
-          <ActionButton title="Back" onClick={() => {}} />
+          <ActionButton text="Back" onClick={() => {}} />
         </Link>
       </header>
       <Title title={`${menuData.name} Detail`} />

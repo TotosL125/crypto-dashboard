@@ -1,29 +1,29 @@
 // library imports
 import React, { FC, Fragment, useContext } from "react";
-import { Outlet } from "react-router-dom";
-
-// feature imports
-import ErrorModal from "../features/ErrorModal";
 
 // component imports
 import ActionButton from "../components/ActionButton";
-import Modal from "../components/Modal";
+import Text from "../components/Text";
+import Title from "../components/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
 
-const RootLayout: FC = (props) => {
+const ErrorModal: FC = () => {
   const { error, resetError, sendRequestHandler } = useContext(CryptosContext);
 
   return (
     <Fragment>
-      {error && <Modal content={<ErrorModal />} onClick={resetError} />}
       <header>
-        <ActionButton text="refresh" onClick={sendRequestHandler} />
+        <Title title="Something went wrong!" />
       </header>
-      <Outlet />
+      <Text text={error ? error : ""} />
+      <footer>
+        <ActionButton text="Retry" onClick={sendRequestHandler} />
+        <ActionButton text="Close" onClick={resetError} />
+      </footer>
     </Fragment>
   );
 };
 
-export default RootLayout;
+export default ErrorModal;

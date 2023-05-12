@@ -3,7 +3,7 @@ const useRequest = () => {
     const resp = await fetch(url);
 
     if (!resp.ok) {
-      throw new Error("Request failed...");
+      throw new Error(`${resp.status}: ${resp.statusText}`);
     }
 
     const data = await resp.json();
