@@ -1,5 +1,5 @@
 // library imports
-import React, { FC, useContext } from "react";
+import React, { FC, useCallback, useContext, useEffect } from "react";
 
 // feature imports
 import DashboardList from "../features/DashboardList";
@@ -14,11 +14,15 @@ import { CryptosContext } from "../stores/crypto-context";
 const Dashboard: FC = () => {
   const cryptosCtx = useContext(CryptosContext);
 
-  const sendRequest = () => {
+  const sendRequest = useCallback(() => {
     cryptosCtx.sendRequestHandler(
       "https://api.coingecko.com/api/v3/coins/markets?vs_currency=zar&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en"
     );
-  };
+  }, [cryptosCtx]);
+
+  useEffect(() => {
+    sendRequest();
+  }, [sendRequest]);
 
   const openSettings = () => {
     console.log("Add settings");
