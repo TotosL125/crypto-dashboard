@@ -75,6 +75,7 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
 
       setError(errorMessage);
     }
+    setIsLoading(false);
   }
 
   const contextValue: contextObj = {

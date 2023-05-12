@@ -1,17 +1,24 @@
 // library imports
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 
 // feature imports
 import DashboardListHeader from "./DashboardListHeader";
 import DashboardListItem from "./DashboardListItem";
 
+// component imports
+import Loading from "../components/Loading";
+
 // other imports
+import { CryptosContext } from "../stores/crypto-context";
 import dataObj from "../assets/dataType";
 
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
+  const { isLoading } = useContext(CryptosContext);
+
   return (
     <div>
       <DashboardListHeader />
+      {isLoading && <Loading />}
       <ul>
         {props.currencies.map((currency) => (
           <DashboardListItem
