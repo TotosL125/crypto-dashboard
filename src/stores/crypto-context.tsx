@@ -5,41 +5,25 @@ import React, { createContext, FC, ReactNode, useState } from "react";
 import useRequest from "../hooks/use-request";
 import dataObj from "../assets/dataType";
 
-// const DUMMY_DATA = [
-//   {
-//     id: "bitcoin",
-//     symbol: "btc",
-//     name: "Bitcoin",
-//     current_price: 125000,
-//     price_change_percentage_24h: 0.25,
-//   },
-//   {
-//     id: "ethereum",
-//     symbol: "eth",
-//     name: "Ethereum",
-//     current_price: 63000,
-//     price_change_percentage_24h: -2.5,
-//   },
-// ];
-
-const DUMMY_DATA: dataObj[] = [];
-
 type contextObj = {
   cryptos: dataObj[];
-  sendRequestHandler: (url: string) => void;
+  sendRequestHandler: () => void;
 };
 
 export const CryptosContext = createContext<contextObj>({
   cryptos: [],
-  sendRequestHandler: (url: string) => {},
+  sendRequestHandler: () => {},
 });
 
 const CryptosContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
-  const [cryptos, setCryptos] = useState<dataObj[]>(DUMMY_DATA);
+  const [cryptos, setCryptos] = useState<dataObj[]>([]);
+
+  const url =
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=zar&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en";
 
   const sendRequest = useRequest();
 
-  async function sendRequestHandler(url: string) {
+  async function sendRequestHandler() {
     const data = await sendRequest(url);
     setCryptos(data);
   }

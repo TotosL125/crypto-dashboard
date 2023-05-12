@@ -11,18 +11,12 @@ import Title from "../components/Title";
 import { CryptosContext } from "../stores/crypto-context";
 
 const Dashboard: FC = () => {
-  const cryptosCtx = useContext(CryptosContext);
-
-  const sendRequest = () => {
-    cryptosCtx.sendRequestHandler(
-      "https://api.coingecko.com/api/v3/coins/markets?vs_currency=zar&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en"
-    );
-  };
+  const { cryptos } = useContext(CryptosContext);
 
   return (
     <Fragment>
       <Title title="Dashboard" />
-      <DashboardList currencies={cryptosCtx.cryptos} />
+      <DashboardList currencies={cryptos} />
     </Fragment>
   );
 };
