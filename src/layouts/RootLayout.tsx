@@ -34,6 +34,20 @@ const RootLayout: FC = (props) => {
         <ActionButton func={gear} onClick={settingsHandler} />
       </header>
       <Outlet />
+      <footer>
+        <p>
+          Powered by{" "}
+          {
+            <a
+              target="_bank"
+              rel="noreferrer"
+              href="https://www.coingecko.com/en/api"
+            >
+              CoinGecko API
+            </a>
+          }
+        </p>
+      </footer>
     </Fragment>
   );
 };
