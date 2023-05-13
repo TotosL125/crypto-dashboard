@@ -1,14 +1,18 @@
-import React, { FC } from "react";
+import React, { FC, SVGProps } from "react";
 
 const ActionButton: FC<{
-  func: string;
+  func: string | FC<SVGProps<SVGSVGElement>>;
   onClick: () => void;
 }> = (props) => {
-  return (
-    <button onClick={props.onClick}>
-      <img src={props.func} alt={props.func} />
-    </button>
-  );
+  if (typeof props.func === "string") {
+    return <button onClick={props.onClick}>{props.func}</button>;
+  } else {
+    return (
+      <button onClick={props.onClick}>
+        <props.func />
+      </button>
+    );
+  }
 };
 
 export default ActionButton;
