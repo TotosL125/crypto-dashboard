@@ -10,6 +10,9 @@ import SettingsForm from "../features/SettingsForm";
 import ActionButton from "../components/ActionButton";
 import Modal from "../components/Modal";
 
+// style imports
+import styles from "./RootLayout.module.css";
+
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
 import { Arrow, Gear, House } from "../assets/graphics";
@@ -29,7 +32,7 @@ const RootLayout: FC = (props) => {
       {showSettings && (
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
-      <header>
+      <header className={styles.header}>
         <Link to="/">
           <ActionButton icon={House} onClick={() => {}} />
         </Link>

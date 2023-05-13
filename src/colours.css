@@ -1,8 +1,8 @@
 :root {
-  --dark: #262729;
-  --light: #f0f0f0;
-  --primary: #152547;
-  --secondary: #ffd700;
-  --good: #00ab66;
-  --bad: #f22300;
+  --dark: black;
+  --light: lightgrey;
+  --primary: navy;
+  --secondary: gold;
+  --good: green;
+  --bad: red;
 }
