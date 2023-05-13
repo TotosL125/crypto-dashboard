@@ -1,10 +1,14 @@
 import React, { FC } from "react";
 
 const ActionButton: FC<{
-  text: string;
+  func: string;
   onClick: () => void;
 }> = (props) => {
-  return <button onClick={props.onClick}>{props.text}</button>;
+  return (
+    <button onClick={props.onClick}>
+      <img src={props.func} alt={props.func} />
+    </button>
+  );
 };
 
 export default ActionButton;

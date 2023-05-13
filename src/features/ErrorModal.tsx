@@ -8,6 +8,7 @@ import Title from "../components/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
+import { arrow, cross } from "../assets/graphics";
 
 const ErrorModal: FC = () => {
   const { error, resetError, sendRequestHandler } = useContext(CryptosContext);
@@ -19,8 +20,8 @@ const ErrorModal: FC = () => {
       </header>
       <Text text={error ? error : ""} />
       <footer>
-        <ActionButton text="Retry" onClick={sendRequestHandler} />
-        <ActionButton text="Close" onClick={resetError} />
+        <ActionButton func={arrow} onClick={sendRequestHandler} />
+        <ActionButton func={cross} onClick={resetError} />
       </footer>
     </Fragment>
   );
