@@ -12,7 +12,7 @@ import Modal from "../components/Modal";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { arrow, gear } from "../assets/graphics";
+import { Arrow, Gear } from "../assets/graphics";
 
 const RootLayout: FC = (props) => {
   const {
@@ -30,8 +30,8 @@ const RootLayout: FC = (props) => {
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
       <header>
-        <ActionButton func={arrow} onClick={sendRequestHandler} />
-        <ActionButton func={gear} onClick={settingsHandler} />
+        <ActionButton icon={Arrow} onClick={sendRequestHandler} />
+        <ActionButton icon={Gear} onClick={settingsHandler} />
       </header>
       <Outlet />
       <footer>

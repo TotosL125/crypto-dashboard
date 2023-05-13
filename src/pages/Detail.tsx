@@ -11,7 +11,7 @@ import Title from "../components/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { house } from "../assets/graphics";
+import { House } from "../assets/graphics";
 
 const Detail: FC = () => {
   const params = useParams();
@@ -25,7 +25,7 @@ const Detail: FC = () => {
     <div>
       <header>
         <Link to="/">
-          <ActionButton func={house} onClick={() => {}} />
+          <ActionButton icon={House} onClick={() => {}} />
         </Link>
       </header>
       <Title title={`${menuData.name} Detail`} />

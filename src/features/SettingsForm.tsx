@@ -7,7 +7,7 @@ import Title from "../components/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { checkmark } from "../assets/graphics";
+import { Checkmark } from "../assets/graphics";
 
 const SettingsForm: FC = () => {
   const currencyInputRef = useRef<HTMLInputElement>(null);
@@ -37,7 +37,7 @@ const SettingsForm: FC = () => {
         <input ref={perPageInputRef} type="text" value={urlValues.perPage} />
       </main>
       <footer>
-        <ActionButton func={checkmark} onClick={() => {}} />
+        <ActionButton icon={Checkmark} onClick={() => {}} />
       </footer>
     </form>
   );
