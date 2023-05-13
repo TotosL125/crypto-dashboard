@@ -1,10 +1,8 @@
 :root {
-  --primary: black;
-  --secondary: darkblue;
-  --tertiary: gold;
-  --primary_accent: darkgrey;
-  --secondary_accent: blue;
-  --text: white;
-  --inc: green;
-  --dec: red;
+  --dark: #262729;
+  --light: #f0f0f0;
+  --primary: #152547;
+  --secondary: #ffd700;
+  --good: #00ab66;
+  --bad: #f22300;
 }
