@@ -1,0 +1,10 @@
+.text {
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: bold;
+  height: fit-content;
+  width: fit-content;
+
+  color: var(--light);
+}
