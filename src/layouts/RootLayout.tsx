@@ -1,6 +1,6 @@
 // library imports
 import React, { FC, Fragment, useContext } from "react";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 // feature imports
 import ErrorModal from "../features/ErrorModal";
@@ -12,7 +12,7 @@ import Modal from "../components/Modal";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { Arrow, Gear } from "../assets/graphics";
+import { Arrow, Gear, House } from "../assets/graphics";
 
 const RootLayout: FC = (props) => {
   const {
@@ -30,8 +30,13 @@ const RootLayout: FC = (props) => {
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
       <header>
-        <ActionButton icon={Arrow} onClick={sendRequestHandler} />
-        <ActionButton icon={Gear} onClick={settingsHandler} />
+        <Link to="/">
+          <ActionButton icon={House} onClick={() => {}} />
+        </Link>
+        <div>
+          <ActionButton icon={Arrow} onClick={sendRequestHandler} />
+          <ActionButton icon={Gear} onClick={settingsHandler} />
+        </div>
       </header>
       <Outlet />
       <footer>

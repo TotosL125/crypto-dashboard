@@ -1,17 +1,15 @@
 // library imports
-import React, { FC, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { FC, useContext, Fragment } from "react";
+import { useParams } from "react-router-dom";
 
 // feature imports
 import DetailMenu from "../features/DetailMenu";
 
 // component imports
-import ActionButton from "../components/ActionButton";
 import Title from "../components/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { House } from "../assets/graphics";
 
 const Detail: FC = () => {
   const params = useParams();
@@ -22,15 +20,10 @@ const Detail: FC = () => {
   )[0];
 
   return (
-    <div>
-      <header>
-        <Link to="/">
-          <ActionButton icon={House} onClick={() => {}} />
-        </Link>
-      </header>
+    <Fragment>
       <Title title={`${menuData.name} Detail`} />
       <DetailMenu data={menuData} />
-    </div>
+    </Fragment>
   );
 };
 
