@@ -1,0 +1,9 @@
+.title {
+  text-align: center;
+
+  font-size: 60px;
+  height: fit-content;
+  width: fit-content;
+
+  color: var(--light);
+}
