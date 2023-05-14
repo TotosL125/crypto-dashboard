@@ -16,17 +16,5 @@
 
 .content {
   flex: 1 0 auto;
-}
-
-.layout footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-  width: 98vw;
-  height: fit-content;
-
-  justify-self: flex-end;
-  background-color: green;
+  background-color: blue;
 }

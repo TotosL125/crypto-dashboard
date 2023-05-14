@@ -8,6 +8,7 @@ import SettingsForm from "../features/SettingsForm";
 
 // component imports
 import RootLayoutHeader from "./RootLayoutHeader";
+import RootLayoutFooter from "./RootLayoutFooter";
 import Modal from "../components/Modal";
 
 // style imports
@@ -30,20 +31,7 @@ const RootLayout: FC = (props) => {
       <div className={styles.content}>
         <Outlet />
       </div>
-      <footer>
-        <p>
-          Powered by{" "}
-          {
-            <a
-              target="_bank"
-              rel="noreferrer"
-              href="https://www.coingecko.com/en/api"
-            >
-              CoinGecko API
-            </a>
-          }
-        </p>
-      </footer>
+      <RootLayoutFooter />
     </div>
   );
 };
