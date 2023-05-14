@@ -8,6 +8,9 @@ import DashboardListItem from "./DashboardListItem";
 // component imports
 import Loading from "../components/Loading";
 
+// style imports
+import styles from "./styles/DashboardList.module.css";
+
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
 import dataObj from "../assets/dataType";
@@ -16,10 +19,10 @@ const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
   const { isLoading } = useContext(CryptosContext);
 
   return (
-    <div>
+    <div className={styles.container}>
       <DashboardListHeader />
       {isLoading && <Loading />}
-      <ul>
+      <ul className={styles.list}>
         {props.currencies.map((currency) => (
           <DashboardListItem
             key={currency.id}
