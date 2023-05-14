@@ -37,7 +37,11 @@ const SettingsForm: FC = () => {
         <input ref={perPageInputRef} type="text" value={urlValues.perPage} />
       </main>
       <footer>
-        <ActionButton icon={Checkmark} onClick={() => {}} />
+        <ActionButton
+          icon={Checkmark}
+          colour="var(--good)"
+          onClick={() => {}}
+        />
       </footer>
     </form>
   );

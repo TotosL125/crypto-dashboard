@@ -10,6 +10,7 @@ import styles from "./styles/ActionButton.module.css";
 const ActionButton: FC<{
   icon?: FC<SVGProps<SVGSVGElement>>;
   text?: string;
+  colour?: string;
   onClick: () => void;
 }> = (props) => {
   if (props.text) {
@@ -21,7 +22,7 @@ const ActionButton: FC<{
   } else {
     return (
       <button className={styles.button} onClick={props.onClick}>
-        <Icon icon={props.icon!} />
+        <Icon icon={props.icon!} colour={props.colour!} />
       </button>
     );
   }

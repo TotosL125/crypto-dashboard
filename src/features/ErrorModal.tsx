@@ -20,8 +20,12 @@ const ErrorModal: FC = () => {
       </header>
       <Text text={error ? error : ""} />
       <footer>
-        <ActionButton icon={Reload} onClick={sendRequestHandler} />
-        <ActionButton icon={Cross} onClick={resetError} />
+        <ActionButton
+          icon={Reload}
+          colour="var(--light)"
+          onClick={sendRequestHandler}
+        />
+        <ActionButton icon={Cross} colour="var(--bad)" onClick={resetError} />
       </footer>
     </Fragment>
   );

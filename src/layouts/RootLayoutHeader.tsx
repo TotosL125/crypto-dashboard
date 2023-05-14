@@ -18,11 +18,19 @@ const RootLayoutHeader: FC = (props) => {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <ActionButton icon={House} onClick={() => {}} />
+        <ActionButton icon={House} colour="var(--light)" onClick={() => {}} />
       </Link>
       <div>
-        <ActionButton icon={Reload} onClick={sendRequestHandler} />
-        <ActionButton icon={Gear} onClick={settingsHandler} />
+        <ActionButton
+          icon={Reload}
+          colour="var(--light)"
+          onClick={sendRequestHandler}
+        />
+        <ActionButton
+          icon={Gear}
+          colour="var(--light)"
+          onClick={settingsHandler}
+        />
       </div>
     </header>
   );
