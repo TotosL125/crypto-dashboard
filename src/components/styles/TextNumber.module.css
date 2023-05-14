@@ -1,11 +1,23 @@
 .good {
+  font-size: 12px;
   font-weight: bold;
+  text-align: center;
+
+  height: fit-content;
+  min-width: 8vw;
+  width: fit-content;
 
   color: var(--good);
 }
 
 .bad {
+  font-size: 12px;
   font-weight: bold;
+  text-align: center;
+
+  height: fit-content;
+  min-width: 8vw;
+  width: fit-content;
 
   color: var(--bad);
 }

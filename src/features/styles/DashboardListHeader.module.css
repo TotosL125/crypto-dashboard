@@ -1,15 +1,28 @@
 .header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 4vw;
 
-  width: 46vw;
+  height: fit-content;
+  width: 68vw;
+
+  margin: 0;
+  padding-bottom: 2px;
 }
 
 .header h4 {
+  flex: 0 0 auto;
   font-size: 16px;
   font-weight: bold;
+  text-align: center;
+
+  height: fit-content;
+  width: 8vw;
+
+  margin: 0;
+  padding: 0;
 
   color: var(--light);
 }

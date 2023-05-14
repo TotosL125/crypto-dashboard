@@ -1,10 +1,11 @@
 .container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
+  gap: 4vw;
 
-  width: 46vw;
+  width: 68vw;
 
   transition-duration: 0.2s;
 }
