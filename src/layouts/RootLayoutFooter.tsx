@@ -1,13 +1,16 @@
 // library imports
 import React, { FC } from "react";
 
+// component imports
+import Text from "../components/Text";
+
 // style imports
 import styles from "./styles/RootLayoutFooter.module.css";
 
 const RootLayoutFooter: FC = (props) => {
   return (
     <div className={styles.footer}>
-      <p>
+      <Text>
         Powered by{" "}
         {
           <a
@@ -18,7 +21,7 @@ const RootLayoutFooter: FC = (props) => {
             CoinGecko API
           </a>
         }
-      </p>
+      </Text>
     </div>
   );
 };

@@ -18,7 +18,7 @@ const ErrorModal: FC = () => {
       <header>
         <Title title="Something went wrong!" />
       </header>
-      <Text text={error ? error : ""} />
+      <Text>{error ? error : ""}</Text>
       <footer>
         <ActionButton
           icon={Reload}

@@ -19,11 +19,11 @@ const DashboardListItem: FC<data> = (props) => {
   return (
     <Link to={`/${props.symbol}/detail`}>
       <li>
-        <Text text={props.symbol} />
-        <Text text={props.name} />
-        <Text text={`${props.currentPrice} ZAR`} />
+        <Text>{props.symbol}</Text>
+        <Text>{props.name}</Text>
+        <Text>{`${props.currentPrice} ZAR`}</Text>
         <TextNumber num={props.priceChange} />
-        <Text text={`${props.marketCap} ZAR`} />
+        <Text>{`${props.marketCap} ZAR`}</Text>
         <TextNumber num={props.marketCapChange} />
       </li>
     </Link>

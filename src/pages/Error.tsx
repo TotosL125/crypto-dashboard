@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 // component imports
 import Title from "../components/Title";
+import Text from "../components/Text";
 
 const ErrorPage: FC = () => {
   return (
@@ -12,7 +13,7 @@ const ErrorPage: FC = () => {
       <Link to="/">
         <p>Go back to safety!</p>
       </Link>
-      <p>Congratulations! You have reached the end of the internet...</p>
+      <Text>Congratulations! You have reached the end of the internet...</Text>
     </Fragment>
   );
 };

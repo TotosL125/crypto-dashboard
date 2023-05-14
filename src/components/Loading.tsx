@@ -6,9 +6,9 @@ import Text from "./Text";
 
 const Loading: FC = () => {
   return (
-    <p>
-      <Text text="Loading..." />
-    </p>
+    <div>
+      <Text>Loading...</Text>
+    </div>
   );
 };
 

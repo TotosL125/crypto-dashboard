@@ -1,13 +1,13 @@
 // library imports
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 
 // style imports
 import styles from "./styles/Text.module.css";
 
-const Text: FC<{ text: string }> = (props) => {
+const Text: FC<{ children: ReactNode }> = (props) => {
   return (
     <div>
-      <p className={styles.text}>{props.text}</p>
+      <p className={styles.text}>{props.children}</p>
     </div>
   );
 };
