@@ -6,8 +6,8 @@
   max-height: 6vh;
   max-width: 4vw;
 
-  background-color: var(--primary);
-  border-color: var(--primary);
+  background-color: var(--accent2);
+  border-color: var(--accent2);
   border-radius: 2px;
 
   transition-duration: 0.2s;
