@@ -3,7 +3,7 @@ import React, { FC, useContext } from "react";
 import { Link } from "react-router-dom";
 
 // component imports
-import ActionButton from "../components/ActionButton";
+import HeaderButton from "./HeaderButton";
 
 // style imports
 import styles from "./styles/RootLayoutHeader.module.css";
@@ -18,19 +18,11 @@ const RootLayoutHeader: FC = (props) => {
   return (
     <header className={styles.header}>
       <Link to="/">
-        <ActionButton icon={House} colour="var(--light)" onClick={() => {}} />
+        <HeaderButton icon={House} onClick={() => {}} />
       </Link>
       <div>
-        <ActionButton
-          icon={Reload}
-          colour="var(--light)"
-          onClick={sendRequestHandler}
-        />
-        <ActionButton
-          icon={Gear}
-          colour="var(--light)"
-          onClick={settingsHandler}
-        />
+        <HeaderButton icon={Reload} onClick={sendRequestHandler} />
+        <HeaderButton icon={Gear} onClick={settingsHandler} />
       </div>
     </header>
   );

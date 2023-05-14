@@ -22,10 +22,10 @@ const ErrorModal: FC = () => {
       <footer>
         <ActionButton
           icon={Reload}
-          colour="var(--light)"
+          styleType="normal"
           onClick={sendRequestHandler}
         />
-        <ActionButton icon={Cross} colour="var(--bad)" onClick={resetError} />
+        <ActionButton icon={Cross} styleType="bad" onClick={resetError} />
       </footer>
     </Fragment>
   );
