@@ -30,7 +30,7 @@ const SettingsForm: FC = () => {
   return (
     <form onSubmit={onSubmitHandler}>
       <header>
-        <Title title="Settings" />
+        <Title>Settings</Title>
       </header>
       <main>
         <input ref={currencyInputRef} type="text" value={urlValues.currency} />

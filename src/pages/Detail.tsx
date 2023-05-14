@@ -21,7 +21,7 @@ const Detail: FC = () => {
 
   return (
     <Fragment>
-      <Title title={`${menuData.name} Detail`} />
+      <Title>{`${menuData.name} Detail`}</Title>
       <DetailMenu data={menuData} />
     </Fragment>
   );

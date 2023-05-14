@@ -15,7 +15,7 @@ const Dashboard: FC = () => {
 
   return (
     <Fragment>
-      <Title title="Dashboard" />
+      <Title>Dashboard</Title>
       <DashboardList currencies={cryptos} />
     </Fragment>
   );

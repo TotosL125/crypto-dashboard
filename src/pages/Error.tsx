@@ -9,7 +9,7 @@ import Text from "../components/Text";
 const ErrorPage: FC = () => {
   return (
     <Fragment>
-      <Title title="404 Not Found" />
+      <Title>404 Not Found</Title>
       <Link to="/">
         <p>Go back to safety!</p>
       </Link>

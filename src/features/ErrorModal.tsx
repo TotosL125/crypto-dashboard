@@ -16,7 +16,7 @@ const ErrorModal: FC = () => {
   return (
     <Fragment>
       <header>
-        <Title title="Something went wrong!" />
+        <Title>Something went wrong!</Title>
       </header>
       <Text>{error ? error : ""}</Text>
       <footer>
