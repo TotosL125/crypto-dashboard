@@ -1,8 +1,8 @@
 :root {
-  --dark: black;
-  --light: lightgrey;
-  --primary: navy;
-  --secondary: gold;
-  --good: green;
-  --bad: red;
+  --dark: #120a04;
+  --light: #d7e0dd;
+  --accent1: #b7c0c8;
+  --accent2: #0871c5;
+  --good: #24a972;
+  --bad: #e73a11;
 }
