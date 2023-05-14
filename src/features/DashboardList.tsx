@@ -22,6 +22,15 @@ const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
     <div className={styles.container}>
       <DashboardListHeader />
       {isLoading && <Loading />}
+      <DashboardListItem
+        key="bitcoin"
+        symbol="btc"
+        name="Bitcoin"
+        currentPrice={100000000}
+        priceChange={-7}
+        marketCap={100000}
+        marketCapChange={2}
+      />
       <ul className={styles.list}>
         {props.currencies.map((currency) => (
           <DashboardListItem

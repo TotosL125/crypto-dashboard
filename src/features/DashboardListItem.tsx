@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import Text from "../components/Text";
 import TextNumber from "../components/TextNumber";
 
+// style imports
+import styles from "./styles/DashboardListItem.module.css";
+
 type data = {
   symbol: string;
   name: string;
@@ -17,8 +20,8 @@ type data = {
 
 const DashboardListItem: FC<data> = (props) => {
   return (
-    <Link to={`/${props.symbol}/detail`}>
-      <li>
+    <Link to={`/${props.symbol}/detail`} style={{ textDecoration: "none" }}>
+      <li className={styles.container}>
         <Text>{props.symbol}</Text>
         <Text>{props.name}</Text>
         <Text>{`${props.currentPrice} ZAR`}</Text>

@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 46vw;
+
+  transition-duration: 0.2s;
+}
+
+.container:hover {
+  box-shadow: 2px 2px 4px var(--light);
+  transition-duration: 0.2s;
+}
