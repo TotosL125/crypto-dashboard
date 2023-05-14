@@ -16,7 +16,7 @@ const RootLayoutHeader: FC = (props) => {
   const { sendRequestHandler, settingsHandler } = useContext(CryptosContext);
 
   return (
-    <header className={styles.header}>
+    <div className={styles.header}>
       <Link to="/">
         <HeaderButton icon={House} onClick={() => {}} />
       </Link>
@@ -24,7 +24,7 @@ const RootLayoutHeader: FC = (props) => {
         <HeaderButton icon={Reload} onClick={sendRequestHandler} />
         <HeaderButton icon={Gear} onClick={settingsHandler} />
       </div>
-    </header>
+    </div>
   );
 };
 

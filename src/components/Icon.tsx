@@ -19,7 +19,7 @@ const Icon: FC<{ icon: FC<SVGProps<SVGSVGElement>>; styleType: string }> = (
     styleClass = styles["icon-normal"];
   }
 
-  return <props.icon className={styleClass} transform="scale(0.8)" />;
+  return <props.icon className={styleClass} height="4vh" />;
 };
 
 export default Icon;

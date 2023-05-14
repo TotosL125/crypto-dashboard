@@ -1,5 +1,5 @@
 // library imports
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 // feature imports
@@ -11,7 +11,7 @@ import RootLayoutHeader from "./RootLayoutHeader";
 import Modal from "../components/Modal";
 
 // style imports
-import styles from "./RootLayout.module.css";
+import styles from "./styles/RootLayout.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
@@ -21,13 +21,15 @@ const RootLayout: FC = (props) => {
     useContext(CryptosContext);
 
   return (
-    <Fragment>
+    <div className={styles.layout}>
       {error && <Modal content={<ErrorModal />} onClick={resetError} />}
       {showSettings && (
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
       <RootLayoutHeader />
-      <Outlet />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
       <footer>
         <p>
           Powered by{" "}
@@ -42,7 +44,7 @@ const RootLayout: FC = (props) => {
           }
         </p>
       </footer>
-    </Fragment>
+    </div>
   );
 };
 
