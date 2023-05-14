@@ -7,9 +7,8 @@
   max-width: 4vw;
 
   transition-duration: 0.2s;
-
-  background-color: blue;
   border-style: none;
+  background-color: var(--dark);
 }
 
 .button:hover {

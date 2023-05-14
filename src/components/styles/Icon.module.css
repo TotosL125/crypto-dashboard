@@ -1,14 +1,11 @@
 .icon-normal path {
   stroke: var(--light);
-  opacity: 0.8;
 }
 
 .icon-good path {
   stroke: var(--good);
-  opacity: 0.8;
 }
 
 .icon-bad path {
   stroke: var(--bad);
-  opacity: 0.8;
 }
