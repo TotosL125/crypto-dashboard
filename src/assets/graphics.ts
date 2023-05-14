@@ -1,9 +1,10 @@
 // import SVGs
-import { ReactComponent as Arrow } from "./SVGs/arrow-2-cw-svgrepo-com.svg";
-import { ReactComponent as Checkmark } from "./SVGs/checkmark-square-svgrepo-com.svg";
-import { ReactComponent as Cross } from "./SVGs/xmark-small-svgrepo-com.svg";
-import { ReactComponent as Gear } from "./SVGs/gear-svgrepo-com.svg";
-import { ReactComponent as House } from "./SVGs/house-svgrepo-com.svg";
+import { ReactComponent as Reload } from "./SVGs/rotate-small-right-svgrepo-com.svg";
+import { ReactComponent as Checkmark } from "./SVGs/check-small-svgrepo-com.svg";
+import { ReactComponent as Cross } from "./SVGs/cross-small-svgrepo-com.svg";
+import { ReactComponent as Gear } from "./SVGs/settings-svgrepo-com.svg";
+import { ReactComponent as House } from "./SVGs/home-1-svgrepo-com.svg";
+import { ReactComponent as Warning } from "./SVGs/warning-circle-svgrepo-com.svg";
 
 // export all in single object
-export { Arrow, Checkmark, Cross, Gear, House };
+export { Checkmark, Cross, Gear, House, Reload, Warning };

@@ -10,7 +10,7 @@ import styles from "./styles/RootLayoutHeader.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { Arrow, Gear, House } from "../assets/graphics";
+import { Gear, House, Reload } from "../assets/graphics";
 
 const RootLayoutHeader: FC = (props) => {
   const { sendRequestHandler, settingsHandler } = useContext(CryptosContext);
@@ -21,7 +21,7 @@ const RootLayoutHeader: FC = (props) => {
         <ActionButton icon={House} onClick={() => {}} />
       </Link>
       <div>
-        <ActionButton icon={Arrow} onClick={sendRequestHandler} />
+        <ActionButton icon={Reload} onClick={sendRequestHandler} />
         <ActionButton icon={Gear} onClick={settingsHandler} />
       </div>
     </header>
