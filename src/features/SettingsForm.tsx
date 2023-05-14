@@ -11,7 +11,7 @@ import styles from "./styles/SettingsForm.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { Checkmark } from "../assets/graphics";
+import { Checkmark, Cross } from "../assets/graphics";
 
 const SettingsForm: FC = () => {
   const currencyInputRef = useRef<HTMLInputElement>(null);
@@ -37,22 +37,27 @@ const SettingsForm: FC = () => {
         <Title>Settings</Title>
       </div>
       <div className={styles.content}>
-        <Label for="currencyInput">Currency</Label>
-        <input
-          ref={currencyInputRef}
-          id="currencyInput"
-          type="text"
-          value={urlValues.currency}
-        />
-        <Label for="perPageInput">Number of Cryptocurrencies</Label>
-        <input
-          ref={perPageInputRef}
-          id="perPageInput"
-          type="text"
-          value={urlValues.perPage}
-        />
+        <div className={styles["content-inputs"]}>
+          <Label for="currencyInput">Currency</Label>
+          <input
+            ref={currencyInputRef}
+            id="currencyInput"
+            type="text"
+            value={urlValues.currency}
+          />
+        </div>
+        <div className={styles["content-inputs"]}>
+          <Label for="perPageInput">Number of Cryptocurrencies</Label>
+          <input
+            ref={perPageInputRef}
+            id="perPageInput"
+            type="text"
+            value={urlValues.perPage}
+          />
+        </div>
       </div>
       <div className={styles.footer}>
+        <ActionButton icon={Cross} styleType="bad" onClick={settingsHandler} />
         <ActionButton icon={Checkmark} styleType="good" onClick={() => {}} />
       </div>
     </form>

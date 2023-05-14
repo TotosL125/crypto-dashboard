@@ -1,10 +1,13 @@
 // library imports
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, useContext } from "react";
 
 // component imports
 import ActionButton from "../components/ActionButton";
-import Text from "../components/Text";
+import Label from "../components/Label";
 import Title from "../components/Title";
+
+// style imports
+import styles from "./styles/ErrorModal.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
@@ -14,20 +17,22 @@ const ErrorModal: FC = () => {
   const { error, resetError, sendRequestHandler } = useContext(CryptosContext);
 
   return (
-    <Fragment>
-      <header>
-        <Title>Something went wrong!</Title>
-      </header>
-      <Text>{error ? error : ""}</Text>
-      <footer>
+    <div className={styles.layout}>
+      <div className={styles.header}>
+        <Title>Error!</Title>
+      </div>
+      <div className={styles.content}>
+        <Label>{error ? error : ""}</Label>
+      </div>
+      <div className={styles.footer}>
         <ActionButton
           icon={Reload}
           styleType="normal"
           onClick={sendRequestHandler}
         />
         <ActionButton icon={Cross} styleType="bad" onClick={resetError} />
-      </footer>
-    </Fragment>
+      </div>
+    </div>
   );
 };
 
