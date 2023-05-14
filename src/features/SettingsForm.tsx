@@ -4,6 +4,10 @@ import React, { FormEvent, FC, useContext, useRef } from "react";
 // component imports
 import ActionButton from "../components/ActionButton";
 import Title from "../components/Title";
+import Label from "../components/Label";
+
+//style imports
+import styles from "./styles/SettingsForm.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
@@ -28,17 +32,29 @@ const SettingsForm: FC = () => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <header>
+    <form onSubmit={onSubmitHandler} className={styles.form}>
+      <div className={styles.header}>
         <Title>Settings</Title>
-      </header>
-      <main>
-        <input ref={currencyInputRef} type="text" value={urlValues.currency} />
-        <input ref={perPageInputRef} type="text" value={urlValues.perPage} />
-      </main>
-      <footer>
+      </div>
+      <div className={styles.content}>
+        <Label for="currencyInput">Currency</Label>
+        <input
+          ref={currencyInputRef}
+          id="currencyInput"
+          type="text"
+          value={urlValues.currency}
+        />
+        <Label for="perPageInput">Number of Cryptocurrencies</Label>
+        <input
+          ref={perPageInputRef}
+          id="perPageInput"
+          type="text"
+          value={urlValues.perPage}
+        />
+      </div>
+      <div className={styles.footer}>
         <ActionButton icon={Checkmark} styleType="good" onClick={() => {}} />
-      </footer>
+      </div>
     </form>
   );
 };

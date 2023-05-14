@@ -13,14 +13,12 @@
 }
 
 .overlay {
-  display: flex;
-
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 40vw;
+  width: 26vw;
   height: fit-content;
   max-height: 60vh;
 
@@ -28,5 +26,5 @@
 
   background-color: var(--light);
 
-  border-radius: 40px;
+  border-radius: 20px;
 }
