@@ -5,7 +5,7 @@ import React, { FC } from "react";
 import styles from "./styles/Title.module.css";
 
 const Title: FC<{ title: string }> = (props) => {
-  return <h1 className={styles.title}>{props.title}</h1>;
+  return <h2 className={styles.title}>{props.title}</h2>;
 };
 
 export default Title;
