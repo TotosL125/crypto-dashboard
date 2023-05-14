@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 46vw;
+}
+
+.header h4 {
+  font-size: 16px;
+  font-weight: bold;
+
+  color: var(--light);
+}

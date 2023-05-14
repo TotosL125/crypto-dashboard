@@ -1,18 +1,18 @@
 // library imports
 import React, { FC } from "react";
 
-// component imports
-import Text from "../components/Text";
+// style imports
+import styles from "./styles/DashboardListHeader.module.css";
 
 const DashboardListHeader: FC = () => {
   return (
-    <header>
-      <Text text="Name" />
-      <Text text="Current Price" />
-      <Text text="Price Change" />
-      <Text text="Market Cap" />
-      <Text text="Market Cap Change" />
-    </header>
+    <div className={styles.header}>
+      <h4>Name</h4>
+      <h4>Current Price</h4>
+      <h4>Price Change</h4>
+      <h4>Market Cap</h4>
+      <h4>Market Cap Change</h4>
+    </div>
   );
 };
 
