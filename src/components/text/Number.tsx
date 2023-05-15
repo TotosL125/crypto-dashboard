@@ -5,7 +5,7 @@ import React, { FC, useContext } from "react";
 import Text from "./Text";
 
 // other imports
-import { CryptosContext } from "../stores/crypto-context";
+import { CryptosContext } from "../../stores/crypto-context";
 
 const Number: FC<{ num: number }> = (props) => {
   const { urlValues } = useContext(CryptosContext);

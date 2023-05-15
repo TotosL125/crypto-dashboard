@@ -5,7 +5,7 @@ import React, { FC, Fragment, useContext } from "react";
 import DashboardList from "../features/dashboard/DashboardList";
 
 // component imports
-import Title from "../components/Title";
+import Title from "../components/text/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";

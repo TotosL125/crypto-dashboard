@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 
 // component imports
-import Text from "./Text";
+import Text from "../text/Text";
 
 const Loading: FC = () => {
   return (

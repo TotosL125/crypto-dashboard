@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 
 // component imports
-import Text from "../components/Text";
+import Text from "../components/text/Text";
 
 // style imports
 import styles from "./styles/RootLayoutFooter.module.css";

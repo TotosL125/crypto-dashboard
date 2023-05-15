@@ -9,7 +9,7 @@ import SettingsForm from "../features/modal/SettingsForm";
 // component imports
 import RootLayoutHeader from "./RootLayoutHeader";
 import RootLayoutFooter from "./RootLayoutFooter";
-import Modal from "../components/Modal";
+import Modal from "../components/other/Modal";
 
 // style imports
 import styles from "./styles/RootLayout.module.css";

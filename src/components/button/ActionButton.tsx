@@ -2,7 +2,7 @@
 import React, { FC, SVGProps } from "react";
 
 // component imports
-import Icon from "./Icon";
+import Icon from "../other/Icon";
 
 // style imports
 import styles from "./styles/ActionButton.module.css";

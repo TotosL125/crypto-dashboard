@@ -2,9 +2,9 @@
 import React, { FC, useContext } from "react";
 
 // component imports
-import ActionButton from "../../components/ActionButton";
-import Label from "../../components/Label";
-import Title from "../../components/Title";
+import ActionButton from "../../components/button/ActionButton";
+import Label from "../../components/text/Label";
+import Title from "../../components/text/Title";
 
 // style imports
 import styles from "./styles/ErrorModal.module.css";

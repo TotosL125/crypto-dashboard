@@ -2,9 +2,9 @@
 import React, { FormEvent, FC, useContext, useRef } from "react";
 
 // component imports
-import ActionButton from "../../components/ActionButton";
-import Title from "../../components/Title";
-import Label from "../../components/Label";
+import ActionButton from "../../components/button/ActionButton";
+import Title from "../../components/text/Title";
+import Label from "../../components/text/Label";
 
 //style imports
 import styles from "./styles/SettingsForm.module.css";

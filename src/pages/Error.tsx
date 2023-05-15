@@ -3,8 +3,8 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 // component imports
-import Title from "../components/Title";
-import Text from "../components/Text";
+import Title from "../components/text/Title";
+import Text from "../components/text/Text";
 
 import styles from "./styles/Error.module.css";
 

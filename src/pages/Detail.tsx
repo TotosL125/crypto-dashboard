@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import DetailMenu from "../features/detail/DetailMenu";
 
 // component imports
-import Title from "../components/Title";
+import Title from "../components/text/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";

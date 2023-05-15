@@ -2,9 +2,9 @@
 import React, { FC } from "react";
 
 // component imports
-import Text from "../../components/Text";
-import Number from "../../components/Number";
-import Label from "../../components/Label";
+import Text from "../../components/text/Text";
+import Number from "../../components/text/Number";
+import Label from "../../components/text/Label";
 
 // style imports
 import styles from "./styles/DetailMenuItem.module.css";
