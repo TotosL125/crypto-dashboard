@@ -2,7 +2,7 @@
 import React, { FC, Fragment, useContext } from "react";
 
 // feature imports
-import DashboardList from "../features/DashboardList";
+import DashboardList from "../features/dashboard/DashboardList";
 
 // component imports
 import Title from "../components/Title";

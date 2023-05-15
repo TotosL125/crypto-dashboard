@@ -3,8 +3,8 @@ import React, { FC, useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 // feature imports
-import ErrorModal from "../features/ErrorModal";
-import SettingsForm from "../features/SettingsForm";
+import ErrorModal from "../features/modal/ErrorModal";
+import SettingsForm from "../features/modal/SettingsForm";
 
 // component imports
 import RootLayoutHeader from "./RootLayoutHeader";

@@ -6,14 +6,14 @@ import DashboardListHeader from "./DashboardListHeader";
 import DashboardListItem from "./DashboardListItem";
 
 // component imports
-import Loading from "../components/Loading";
+import Loading from "../../components/Loading";
 
 // style imports
 import styles from "./styles/DashboardList.module.css";
 
 // other imports
-import { CryptosContext } from "../stores/crypto-context";
-import dataObj from "../assets/dataType";
+import { CryptosContext } from "../../stores/crypto-context";
+import dataObj from "../../assets/dataType";
 
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
   const { isLoading } = useContext(CryptosContext);

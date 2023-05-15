@@ -1,4 +1,4 @@
-// import SVGs
+// import SVG icons
 import { ReactComponent as Reload } from "./SVGs/rotate-circle-right-svgrepo-com.svg";
 import { ReactComponent as Checkmark } from "./SVGs/check-svgrepo-com.svg";
 import { ReactComponent as Cross } from "./SVGs/cross-svgrepo-com.svg";

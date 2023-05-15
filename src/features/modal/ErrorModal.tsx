@@ -2,16 +2,16 @@
 import React, { FC, useContext } from "react";
 
 // component imports
-import ActionButton from "../components/ActionButton";
-import Label from "../components/Label";
-import Title from "../components/Title";
+import ActionButton from "../../components/ActionButton";
+import Label from "../../components/Label";
+import Title from "../../components/Title";
 
 // style imports
 import styles from "./styles/ErrorModal.module.css";
 
 // other imports
-import { CryptosContext } from "../stores/crypto-context";
-import { Cross, Reload } from "../assets/graphics";
+import { CryptosContext } from "../../stores/crypto-context";
+import { Cross, Reload } from "../../assets/graphics";
 
 const ErrorModal: FC = () => {
   const { error, resetError, sendRequestHandler } = useContext(CryptosContext);

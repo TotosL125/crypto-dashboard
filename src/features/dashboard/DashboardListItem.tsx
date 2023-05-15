@@ -3,9 +3,9 @@ import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
 // component imports
-import Text from "../components/Text";
-import Number from "../components/Number";
-import TextNumber from "../components/TextNumber";
+import Text from "../../components/Text";
+import Number from "../../components/Number";
+import TextNumber from "../../components/TextNumber";
 
 // style imports
 import styles from "./styles/DashboardListItem.module.css";

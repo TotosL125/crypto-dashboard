@@ -3,7 +3,7 @@ import React, { FC, useContext, Fragment } from "react";
 import { useParams } from "react-router-dom";
 
 // feature imports
-import DetailMenu from "../features/DetailMenu";
+import DetailMenu from "../features/detail/DetailMenu";
 
 // component imports
 import Title from "../components/Title";

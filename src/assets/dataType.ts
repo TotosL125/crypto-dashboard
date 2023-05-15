@@ -1,3 +1,4 @@
+// define the type of data received from CoinGecko
 type dataObj = {
   id: string;
   symbol: string;

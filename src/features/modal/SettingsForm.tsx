@@ -2,16 +2,16 @@
 import React, { FormEvent, FC, useContext, useRef } from "react";
 
 // component imports
-import ActionButton from "../components/ActionButton";
-import Title from "../components/Title";
-import Label from "../components/Label";
+import ActionButton from "../../components/ActionButton";
+import Title from "../../components/Title";
+import Label from "../../components/Label";
 
 //style imports
 import styles from "./styles/SettingsForm.module.css";
 
 // other imports
-import { CryptosContext } from "../stores/crypto-context";
-import { Checkmark, Cross } from "../assets/graphics";
+import { CryptosContext } from "../../stores/crypto-context";
+import { Checkmark, Cross } from "../../assets/graphics";
 
 const SettingsForm: FC = () => {
   const currencyInputRef = useRef<HTMLInputElement>(null);
