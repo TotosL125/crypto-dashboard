@@ -17,7 +17,7 @@ const SettingsForm: FC = () => {
   const currencyInputRef = useRef<HTMLInputElement>(null);
   const perPageInputRef = useRef<HTMLInputElement>(null);
 
-  const { urlValues, urlHandler, settingsHandler, sendRequestHandler } =
+  const { urlHandler, settingsHandler, sendRequestHandler } =
     useContext(CryptosContext);
 
   const onSubmitHandler = (event: FormEvent) => {
@@ -39,21 +39,11 @@ const SettingsForm: FC = () => {
       <div className={styles.content}>
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
-          <input
-            ref={currencyInputRef}
-            id="currencyInput"
-            type="text"
-            value={urlValues.currency}
-          />
+          <input ref={currencyInputRef} id="currencyInput" type="text" />
         </div>
         <div className={styles["content-inputs"]}>
           <Label for="perPageInput">Number of Cryptocurrencies</Label>
-          <input
-            ref={perPageInputRef}
-            id="perPageInput"
-            type="text"
-            value={urlValues.perPage}
-          />
+          <input ref={perPageInputRef} id="perPageInput" type="text" />
         </div>
       </div>
       <div className={styles.footer}>

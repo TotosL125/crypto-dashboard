@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 20vh;
+  width: 8vw;
+
+  background-color: var(--accent1);
+  border-radius: 12px;
+}
+
+.item-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2vh;
+
+  width: 60%;
+  height: 60%;
+
+  background-color: var(--accent2);
+  border: 2px solid var(--dark);
+  border-radius: 12px;
+}

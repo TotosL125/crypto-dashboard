@@ -1,11 +1,14 @@
 // library imports
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, useContext } from "react";
 
 // feature imports
 import DetailMenuItem from "./DetailMenuItem";
 
 // component imports
 import Loading from "../components/Loading";
+
+// style imports
+import styles from "./styles/DetailMenu.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
@@ -20,14 +23,14 @@ const DetailMenu: FC<menu> = (props) => {
   const menuItems = Object.entries(props.data);
 
   return (
-    <Fragment>
+    <div className={styles.container}>
       {isLoading && <Loading />}
-      <ul>
+      <ul className={styles.menu}>
         {menuItems.map((item) => (
           <DetailMenuItem name={item[0]} value={item[1]} />
         ))}
       </ul>
-    </Fragment>
+    </div>
   );
 };
 

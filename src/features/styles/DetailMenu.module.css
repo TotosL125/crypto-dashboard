@@ -1,0 +1,26 @@
+.container {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+
+  max-width: 68vw;
+}
+
+.menu {
+  flex: 1 0 fit-content;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1vw;
+}

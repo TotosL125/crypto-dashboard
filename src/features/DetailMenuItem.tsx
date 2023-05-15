@@ -1,18 +1,24 @@
 // library imports
 import React, { FC } from "react";
 
-type menuItem = {
+// component imports
+import Text from "../components/Text";
+import Number from "../components/Number";
+import Label from "../components/Label";
+
+// style imports
+import styles from "./styles/DetailMenuItem.module.css";
+
+const DetailMenuItem: FC<{
   name: string;
   value: string | number;
-};
-
-const DetailMenuItem: FC<menuItem> = (props) => {
+}> = (props) => {
   return (
-    <li>
-      <div>
-        <p>{props.value}</p>
+    <li className={styles.item}>
+      <div className={styles["item-value"]}>
+        <Text>{props.value}</Text>
       </div>
-      <p>{props.name}</p>
+      <Label>{props.name}</Label>
     </li>
   );
 };
