@@ -1,13 +1,12 @@
 .container {
-  flex: 0 0 auto;
+  flex: 1 0 fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 2%;
 
-  height: 88%;
-  width: fit_content;
+  min-width: 60%;
 }
 
 .list {

@@ -13,22 +13,31 @@ import styles from "./styles/DashboardListItem.module.css";
 type data = {
   symbol: string;
   name: string;
+  image: string;
   currentPrice: number;
   priceChange: number;
-  marketCap: number;
   marketCapChange: number;
 };
 
 const DashboardListItem: FC<data> = (props) => {
   return (
-    <Link to={`/${props.symbol}/detail`} style={{ textDecoration: "none" }}>
+    <Link to={`/${props.symbol}/detail`} className={styles.link}>
       <li className={styles.container}>
-        <Text>{props.symbol}</Text>
-        <Text>{props.name}</Text>
-        <Number num={props.currentPrice} />
-        <TextNumber num={props.priceChange} />
-        <Number num={props.marketCap} />
-        <TextNumber num={props.marketCapChange} />
+        <div className={styles.item}>
+          <img src={props.image} alt="" style={{ height: "40px" }} />
+        </div>
+        <div className={styles.item}>
+          <Text>{props.name}</Text>
+        </div>
+        <div className={styles.item}>
+          <Number num={props.currentPrice} />
+        </div>
+        <div className={styles.item}>
+          <TextNumber num={props.priceChange} />
+        </div>
+        <div className={styles.item}>
+          <TextNumber num={props.marketCapChange} />
+        </div>
       </li>
     </Link>
   );
