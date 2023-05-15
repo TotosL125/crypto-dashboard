@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 // component imports
 import Text from "../../components/text/Text";
-import Number from "../../components/text/Number";
-import TextNumber from "../../components/text/TextNumber";
+import Currency from "../../components/text/Currency";
+import Percent from "../../components/text/Percent";
 
 // style imports
 import styles from "./styles/DashboardListItem.module.css";
@@ -30,13 +30,13 @@ const DashboardListItem: FC<data> = (props) => {
           <Text>{props.name}</Text>
         </div>
         <div className={styles.item}>
-          <Number num={props.currentPrice} />
+          <Currency num={props.currentPrice} />
         </div>
         <div className={styles.item}>
-          <TextNumber num={props.priceChange} />
+          <Percent num={props.priceChange} />
         </div>
         <div className={styles.item}>
-          <TextNumber num={props.marketCapChange} />
+          <Percent num={props.marketCapChange} />
         </div>
       </li>
     </Link>

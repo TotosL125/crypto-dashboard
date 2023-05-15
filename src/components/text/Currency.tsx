@@ -7,7 +7,7 @@ import Text from "./Text";
 // other imports
 import { CryptosContext } from "../../stores/crypto-context";
 
-const Number: FC<{ num: number }> = (props) => {
+const Currency: FC<{ num: number }> = (props) => {
   const { urlValues } = useContext(CryptosContext);
 
   const numOutput = props.num.toLocaleString("en-US", {
@@ -17,4 +17,4 @@ const Number: FC<{ num: number }> = (props) => {
   return <Text>{numOutput}</Text>;
 };
 
-export default Number;
+export default Currency;

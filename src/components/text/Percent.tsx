@@ -4,7 +4,7 @@ import React, { FC } from "react";
 // style imports
 import styles from "./styles/TextNumber.module.css";
 
-const TextNumber: FC<{ num: number }> = (props) => {
+const Percent: FC<{ num: number }> = (props) => {
   let style;
   if (props.num > 0) {
     style = styles.good;
@@ -18,4 +18,4 @@ const TextNumber: FC<{ num: number }> = (props) => {
   );
 };
 
-export default TextNumber;
+export default Percent;

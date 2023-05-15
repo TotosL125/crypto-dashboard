@@ -4,15 +4,16 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 2%;
+  gap: 4%;
 
+  max-height: 92%;
   min-width: 60%;
 }
 
 .list {
   flex: 0 0 auto;
 
-  height: 92%;
+  height: 100%;
   width: 100%;
   overflow: scroll;
 

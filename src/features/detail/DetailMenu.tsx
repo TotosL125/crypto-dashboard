@@ -20,14 +20,57 @@ type menu = {
 
 const DetailMenu: FC<menu> = (props) => {
   const { isLoading } = useContext(CryptosContext);
-  const menuItems = Object.entries(props.data);
+
+  let menuItems = [];
+
+  for (const [key, value] of Object.entries(props.data)) {
+    if (
+      key === "id" ||
+      key === "symbol" ||
+      key === "name" ||
+      key === "image" ||
+      key === "roi"
+    ) {
+      continue;
+    }
+
+    if (
+      key.includes("rank") ||
+      key.includes("valuation") ||
+      key.includes("volume") ||
+      key.includes("ath") ||
+      key.includes("atl")
+    ) {
+      continue;
+    }
+
+    if (value === null) {
+      continue;
+    }
+
+    if (key.includes("updated")) {
+      menuItems.push({ name: key, value: value, type: "text" });
+      continue;
+    }
+
+    if (key.includes("percentage")) {
+      menuItems.push({ name: key, value: value, type: "percentage" });
+      continue;
+    }
+
+    menuItems.push({ name: key, value: value, type: "currency" });
+  }
 
   return (
     <div className={styles.container}>
       {isLoading && <Loading />}
       <ul className={styles.menu}>
         {menuItems.map((item) => (
-          <DetailMenuItem name={item[0]} value={item[1]} />
+          <DetailMenuItem
+            name={item.name}
+            value={item.value}
+            type={item.type}
+          />
         ))}
       </ul>
     </div>
