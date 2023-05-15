@@ -13,7 +13,7 @@ const TextNumber: FC<{ num: number }> = (props) => {
   }
   return (
     <div>
-      <p className={style}>{props.num}%</p>
+      <p className={style}>{props.num.toFixed(4)}%</p>
     </div>
   );
 };

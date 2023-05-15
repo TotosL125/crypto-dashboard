@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 // component imports
 import Text from "../components/Text";
+import Number from "../components/Number";
 import TextNumber from "../components/TextNumber";
 
 // style imports
@@ -24,9 +25,9 @@ const DashboardListItem: FC<data> = (props) => {
       <li className={styles.container}>
         <Text>{props.symbol}</Text>
         <Text>{props.name}</Text>
-        <Text>{`${props.currentPrice} ZAR`}</Text>
+        <Number num={props.currentPrice} />
         <TextNumber num={props.priceChange} />
-        <Text>{`${props.marketCap} ZAR`}</Text>
+        <Number num={props.marketCap} />
         <TextNumber num={props.marketCapChange} />
       </li>
     </Link>
