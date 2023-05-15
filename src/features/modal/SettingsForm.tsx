@@ -3,6 +3,7 @@ import React, { FormEvent, FC, useContext, useRef } from "react";
 
 // component imports
 import ActionButton from "../../components/button/ActionButton";
+import AltButton from "../../components/button/AltButton";
 import Title from "../../components/text/Title";
 import Label from "../../components/text/Label";
 
@@ -47,7 +48,7 @@ const SettingsForm: FC = () => {
         </div>
       </div>
       <div className={styles.footer}>
-        <ActionButton icon={Cross} styleType="bad" onClick={settingsHandler} />
+        <AltButton icon={Cross} styleType="bad" onClick={settingsHandler} />
         <ActionButton icon={Checkmark} styleType="good" onClick={() => {}} />
       </div>
     </form>
