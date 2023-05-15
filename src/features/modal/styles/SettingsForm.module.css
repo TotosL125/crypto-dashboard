@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: var(--accent2);
+  background-color: rgb(var(--accent2));
 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
@@ -35,7 +35,7 @@
 
 .content-inputs input {
   border-radius: 2px;
-  border: 2px solid var(--dark);
+  border: 2px solid rgb(var(--dark));
 
   height: 18px;
 }

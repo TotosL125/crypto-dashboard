@@ -8,7 +8,7 @@
 
   transition-duration: 0.2s;
   border-style: none;
-  background-color: var(--dark);
+  background-color: rgb(var(--dark));
 }
 
 .button:hover {

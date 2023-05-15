@@ -7,5 +7,5 @@
   max-height: 12%;
   width: 100%;
 
-  color: var(--light);
+  color: rgb(var(--light));
 }

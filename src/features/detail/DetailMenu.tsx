@@ -63,16 +63,19 @@ const DetailMenu: FC<menu> = (props) => {
 
   return (
     <div className={styles.container}>
-      {isLoading && <Loading />}
-      <ul className={styles.menu}>
-        {menuItems.map((item) => (
-          <DetailMenuItem
-            name={item.name}
-            value={item.value}
-            type={item.type}
-          />
-        ))}
-      </ul>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <ul className={styles.menu}>
+          {menuItems.map((item) => (
+            <DetailMenuItem
+              name={item.name}
+              value={item.value}
+              type={item.type}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

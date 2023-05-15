@@ -7,7 +7,7 @@
 }
 
 .header {
-  background-color: var(--bad);
+  background-color: rgb(var(--bad));
 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;

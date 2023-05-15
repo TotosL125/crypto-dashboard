@@ -5,9 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background-color: var(--dark);
-  background-image: url("/src/assets/Hexagon-Triangle-Background.svg");
 }
 
 code {

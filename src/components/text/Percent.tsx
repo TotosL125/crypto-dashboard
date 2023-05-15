@@ -2,7 +2,7 @@
 import React, { FC } from "react";
 
 // style imports
-import styles from "./styles/TextNumber.module.css";
+import styles from "./styles/Percent.module.css";
 
 const Percent: FC<{ num: number }> = (props) => {
   let style;

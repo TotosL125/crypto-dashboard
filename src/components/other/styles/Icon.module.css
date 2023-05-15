@@ -1,11 +1,11 @@
 .icon-normal path {
-  stroke: var(--light);
+  stroke: rgb(var(--light));
 }
 
 .icon-good path {
-  stroke: var(--good);
+  stroke: rgb(var(--good));
 }
 
 .icon-bad path {
-  stroke: var(--bad);
+  stroke: rgb(var(--bad));
 }

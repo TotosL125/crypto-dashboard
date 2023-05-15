@@ -6,7 +6,7 @@
   height: fit-content;
   width: fit-content;
 
-  color: var(--good);
+  color: rgb(var(--good));
 }
 
 .bad {
@@ -17,5 +17,5 @@
   height: fit-content;
   width: fit-content;
 
-  color: var(--bad);
+  color: rgb(var(--bad));
 }
