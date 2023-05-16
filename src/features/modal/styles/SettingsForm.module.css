@@ -13,6 +13,7 @@
   border-top-right-radius: 20px;
 
   width: 100%;
+  height: fit-content;
   padding-bottom: 20px;
 }
 
@@ -23,7 +24,10 @@
   align-items: stretch;
   gap: 20px;
 
+  max-width: 100%;
+
   padding-left: 40px;
+  padding-right: 40px;
 }
 
 .content-inputs {
@@ -33,11 +37,19 @@
   gap: 4px;
 }
 
+.content-inputs select {
+  border-radius: 2px;
+  border: 2px solid rgb(var(--dark));
+
+  min-width: 40%;
+  height: 26px;
+}
+
 .content-inputs input {
   border-radius: 2px;
   border: 2px solid rgb(var(--dark));
 
-  height: 18px;
+  height: 22px;
 }
 
 .footer {
