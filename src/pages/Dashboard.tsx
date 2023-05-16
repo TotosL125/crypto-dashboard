@@ -1,5 +1,5 @@
 // library imports
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, Fragment, useContext, useEffect } from "react";
 
 // feature imports
 import DashboardList from "../features/dashboard/DashboardList";
@@ -13,7 +13,11 @@ import { CryptosContext } from "../stores/crypto-context";
 // component function
 const Dashboard: FC = () => {
   // declare state imported from context
-  const { cryptos } = useContext(CryptosContext);
+  const { cryptos, sendRequestHandler } = useContext(CryptosContext);
+
+  useEffect(() => {
+    sendRequestHandler();
+  }, [sendRequestHandler]);
 
   return (
     <Fragment>
