@@ -9,19 +9,24 @@ import Percent from "../../components/text/Percent";
 // style imports
 import styles from "./styles/DetailMenuItem.module.css";
 
-const DetailMenuItem: FC<{
+// define type of props accepted
+type dmiProps = {
   name: string;
   value: string | number;
   type: string;
-}> = (props) => {
-  let value: ReactNode;
+};
 
+//component function
+const DetailMenuItem: FC<dmiProps> = (props) => {
+  let value: ReactNode; // output
+
+  // select output type
   if (props.type === "text") {
-    value = <Text>{props.value}</Text>;
+    value = <Text>{props.value}</Text>; // text output
   } else if (props.type === "percentage") {
-    value = <Percent num={Number(props.value)} />;
+    value = <Percent num={Number(props.value)} />; // percent output
   } else {
-    value = <Currency num={Number(props.value)} />;
+    value = <Currency num={Number(props.value)} />; // currency output
   }
 
   return (

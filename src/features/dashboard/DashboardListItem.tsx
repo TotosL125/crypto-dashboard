@@ -10,6 +10,7 @@ import Percent from "../../components/text/Percent";
 // style imports
 import styles from "./styles/DashboardListItem.module.css";
 
+// define type of props accepted
 type data = {
   symbol: string;
   name: string;
@@ -19,6 +20,7 @@ type data = {
   marketCapChange: number;
 };
 
+// component function
 const DashboardListItem: FC<data> = (props) => {
   return (
     <Link to={`/${props.symbol}/detail`} className={styles.link}>

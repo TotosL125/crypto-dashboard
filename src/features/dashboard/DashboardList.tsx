@@ -15,7 +15,9 @@ import styles from "./styles/DashboardList.module.css";
 import { CryptosContext } from "../../stores/crypto-context";
 import dataObj from "../../assets/dataType";
 
+// component function
 const DashboardList: FC<{ currencies: dataObj[] }> = (props) => {
+  // declare state imported from context
   const { isLoading } = useContext(CryptosContext);
 
   return (

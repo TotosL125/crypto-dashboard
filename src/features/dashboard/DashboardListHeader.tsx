@@ -4,6 +4,7 @@ import React, { FC } from "react";
 // style imports
 import styles from "./styles/DashboardListHeader.module.css";
 
+// component function
 const DashboardListHeader: FC = () => {
   return (
     <div className={styles.header}>
