@@ -12,6 +12,7 @@ import React, {
 // component imports
 import ActionButton from "../../components/button/ActionButton";
 import AltButton from "../../components/button/AltButton";
+import Icon from "../../components/other/Icon";
 import Label from "../../components/text/Label";
 import Title from "../../components/text/Title";
 
@@ -96,8 +97,12 @@ const SettingsForm: FC = () => {
         </div>
       </div>
       <div className={styles.footer}>
-        <AltButton icon={Cross} styleType="bad" onClick={settingsHandler} />
-        <ActionButton icon={Checkmark} styleType="good" onClick={() => {}} />
+        <AltButton type="submit" onClick={settingsHandler}>
+          <Icon icon={Cross} styleType="bad" />
+        </AltButton>
+        <ActionButton type="submit" onClick={() => {}}>
+          <Icon icon={Checkmark} styleType="good" />
+        </ActionButton>
       </div>
     </form>
   );

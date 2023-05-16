@@ -1,38 +1,23 @@
 // library imports
-import React, { FC, SVGProps } from "react";
-
-// component imports
-import Icon from "../other/Icon";
+import React, { ButtonHTMLAttributes, FC } from "react";
 
 // style imports
 import styles from "./styles/ActionButton.module.css";
 
 // define type of props accepted
-type actbProps = {
-  icon?: FC<SVGProps<SVGSVGElement>>;
-  text?: string;
-  styleType: string;
-  onClick: () => void;
-};
+type actbProps = ButtonHTMLAttributes<HTMLButtonElement>;
 
 // component function
 const ActionButton: FC<actbProps> = (props) => {
-  // check type of content provided
-  if (props.text) {
-    // display text
-    return (
-      <button className={styles.button} onClick={props.onClick}>
-        {props.text}
-      </button>
-    );
-  } else {
-    // display icon
-    return (
-      <button className={styles.button} onClick={props.onClick}>
-        <Icon icon={props.icon!} styleType={props.styleType} />
-      </button>
-    );
-  }
+  return (
+    <button
+      type={props.type || "button"}
+      className={styles.button}
+      onClick={props.onClick}
+    >
+      {props.children}
+    </button>
+  );
 };
 
 export default ActionButton;

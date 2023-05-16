@@ -3,6 +3,8 @@ import React, { FC, useContext } from "react";
 
 // component imports
 import ActionButton from "../../components/button/ActionButton";
+import AltButton from "../../components/button/AltButton";
+import Icon from "../../components/other/Icon";
 import Label from "../../components/text/Label";
 import Title from "../../components/text/Title";
 
@@ -27,12 +29,12 @@ const ErrorModal: FC = () => {
         <Label>{error ? error : ""}</Label>
       </div>
       <div className={styles.footer}>
-        <ActionButton
-          icon={Reload}
-          styleType="normal"
-          onClick={sendRequestHandler}
-        />
-        <ActionButton icon={Cross} styleType="bad" onClick={resetError} />
+        <AltButton onClick={resetError}>
+          <Icon icon={Cross} styleType="bad" />
+        </AltButton>
+        <ActionButton onClick={sendRequestHandler}>
+          <Icon icon={Reload} styleType="normal" />
+        </ActionButton>
       </div>
     </div>
   );
