@@ -73,16 +73,18 @@ const SettingsForm: FC = () => {
       <div className={styles.content}>
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
-          <select
-            ref={currencyInputRef}
-            id="currencyInput"
-            defaultValue={urlValues.currency}
-          >
-            {options.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
+          <select ref={currencyInputRef} id="currencyInput" defaultValue="zar">
+            {options.map((option) =>
+              option === urlValues.currency ? (
+                <option key={option} value={option} selected>
+                  {option}
+                </option>
+              ) : (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              )
+            )}
           </select>
         </div>
         <div className={styles["content-inputs"]}>
