@@ -1,19 +1,17 @@
 .container {
-  flex: 0 0 fit-content;
+  flex: 1 1 fit-content;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   gap: 2%;
 
-  max-height: 84%;
+  max-height: 88%;
   min-width: 60%;
-
-  margin-top: 1.4%;
 }
 
 .list {
-  flex: 0 0 auto;
+  flex: 1 1 auto;
 
   height: 100%;
   width: 100%;
