@@ -70,6 +70,7 @@ const DetailMenu: FC<menu> = (props) => {
         <ul className={styles.menu}>
           {menuItems.map((item) => (
             <DetailMenuItem
+              key={item.name}
               name={item.name}
               value={item.value}
               type={item.type}
