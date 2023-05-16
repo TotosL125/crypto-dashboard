@@ -1,5 +1,12 @@
 // library imports
-import React, { FormEvent, FC, useContext } from "react";
+import React, {
+  FormEvent,
+  FC,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 // component imports
 import ActionButton from "../../components/button/ActionButton";
@@ -13,8 +20,10 @@ import styles from "./styles/SettingsForm.module.css";
 // other imports
 import { CryptosContext } from "../../stores/crypto-context";
 import { Checkmark, Cross } from "../../assets/graphics";
+import useRequest from "../../hooks/use-request";
 
 const SettingsForm: FC = () => {
+  // define state and functions imported from context
   const {
     currency,
     currencyChangeHandler,
@@ -24,12 +33,34 @@ const SettingsForm: FC = () => {
     sendRequestHandler,
   } = useContext(CryptosContext);
 
-  const onSubmitHandler = (event: FormEvent) => {
-    event.preventDefault();
+  // define state to store select options
+  const [options, setOptions] = useState<[]>([]);
 
-    sendRequestHandler();
-    settingsHandler();
-  };
+  // define function called on form submission
+  const onSubmitHandler = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+
+      sendRequestHandler(); // send request based on updated information
+      settingsHandler(); // toggle settings modal
+    },
+    [sendRequestHandler, settingsHandler]
+  ); // will only update when sendRequestHandler and settingsHandler update
+
+  const sendRequest = useRequest(); // define request frunction imported from useRequest hook
+
+  // define function to fetch currency options from CoinGecko
+  const getOptions = useCallback(async () => {
+    const opts = await sendRequest(
+      "https://api.coingecko.com/api/v3/simple/supported_vs_currencies"
+    ); // send request and await response
+    setOptions(opts);
+  }, [sendRequest]); // function will never change since sendRequest never changes
+
+  // get options
+  useEffect(() => {
+    getOptions();
+  }, [getOptions]); // will only run once when component is first rendered
 
   return (
     <form onSubmit={onSubmitHandler} className={styles.form}>
@@ -39,12 +70,15 @@ const SettingsForm: FC = () => {
       <div className={styles.content}>
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
-          <input
+          <select
             id="currencyInput"
-            type="text"
             value={currency}
             onChange={currencyChangeHandler}
-          />
+          >
+            {options.map((option) => (
+              <option value={option}>{option}</option>
+            ))}
+          </select>
         </div>
         <div className={styles["content-inputs"]}>
           <Label for="perPageInput">Number of Cryptocurrencies</Label>

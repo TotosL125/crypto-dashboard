@@ -21,7 +21,7 @@ type contextObj = {
   showSettings: boolean;
   settingsHandler: () => void;
   currency: string;
-  currencyChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
+  currencyChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
   perPage: string;
   perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
   cryptos: dataObj[];
@@ -36,7 +36,7 @@ export const CryptosContext = createContext<contextObj>({
   showSettings: false,
   settingsHandler: () => {},
   currency: "",
-  currencyChangeHandler: (event: ChangeEvent<HTMLInputElement>) => {},
+  currencyChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => {},
   perPage: "",
   perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => {},
   cryptos: [],
@@ -75,7 +75,7 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
 
   // define function to watch for changes to currency input
   const currencyChangeHandler = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
+    (event: ChangeEvent<HTMLSelectElement>) => {
       setCurrency(event.target.value);
     },
     []
