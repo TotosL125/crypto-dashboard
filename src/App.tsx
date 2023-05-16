@@ -1,25 +1,46 @@
 // library imports
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-// page imports
-import RootLayout from "./layouts/RootLayout";
-import Dashboard from "./pages/Dashboard";
-import Detail from "./pages/Detail";
-import ErrorPage from "./pages/Error";
+// component imports
+import Loading from "./components/other/Loading";
 
 // other imports
 import "./colours.css";
+
+// page imports
+import RootLayout from "./layouts/RootLayout";
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Detail = lazy(() => import("./pages/Detail"));
+const ErrorPage = lazy(() => import("./pages/Error"));
 
 // create router and define routes
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <Suspense fallback={<Loading />}>
+        <ErrorPage />
+      </Suspense>
+    ),
     children: [
-      { index: true, element: <Dashboard /> },
-      { path: ":id/detail", element: <Detail /> },
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Dashboard />
+          </Suspense>
+        ),
+      },
+      {
+        path: ":id/detail",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Detail />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);

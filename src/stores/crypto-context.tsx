@@ -4,6 +4,7 @@ import React, {
   FC,
   ReactNode,
   useCallback,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -99,6 +100,10 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
 
     setIsLoading(false);
   }, [sendRequest, url]); // will only change when sendRequest and/or url changes
+
+  useEffect(() => {
+    sendRequestHandler();
+  }, [sendRequestHandler]);
 
   // define value of context provider output
   const contextValue: contextObj = {
