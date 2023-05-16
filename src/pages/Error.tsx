@@ -6,8 +6,10 @@ import { Link } from "react-router-dom";
 import Title from "../components/text/Title";
 import Text from "../components/text/Text";
 
+// style imports
 import styles from "./styles/Error.module.css";
 
+// component function
 const ErrorPage: FC = () => {
   return (
     <div className={styles.layout}>

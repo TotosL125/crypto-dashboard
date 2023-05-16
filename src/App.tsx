@@ -11,6 +11,7 @@ import ErrorPage from "./pages/Error";
 // other imports
 import "./colours.css";
 
+// create router and define routes
 const router = createBrowserRouter([
   {
     path: "/",
