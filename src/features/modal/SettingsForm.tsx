@@ -1,5 +1,5 @@
 // library imports
-import React, { FormEvent, FC, useContext, useRef } from "react";
+import React, { FormEvent, FC, useContext } from "react";
 
 // component imports
 import ActionButton from "../../components/button/ActionButton";
@@ -15,19 +15,18 @@ import { CryptosContext } from "../../stores/crypto-context";
 import { Checkmark, Cross } from "../../assets/graphics";
 
 const SettingsForm: FC = () => {
-  const currencyInputRef = useRef<HTMLInputElement>(null);
-  const perPageInputRef = useRef<HTMLInputElement>(null);
-
-  const { urlHandler, settingsHandler, sendRequestHandler } =
-    useContext(CryptosContext);
+  const {
+    currency,
+    currencyChangeHandler,
+    perPage,
+    perPageChangeHandler,
+    settingsHandler,
+    sendRequestHandler,
+  } = useContext(CryptosContext);
 
   const onSubmitHandler = (event: FormEvent) => {
     event.preventDefault();
 
-    urlHandler({
-      currency: currencyInputRef.current!.value,
-      perPage: perPageInputRef.current!.value,
-    });
     sendRequestHandler();
     settingsHandler();
   };
@@ -40,11 +39,22 @@ const SettingsForm: FC = () => {
       <div className={styles.content}>
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
-          <input ref={currencyInputRef} id="currencyInput" type="text" />
+          <input
+            id="currencyInput"
+            type="text"
+            value={currency}
+            onChange={currencyChangeHandler}
+          />
         </div>
         <div className={styles["content-inputs"]}>
           <Label for="perPageInput">Number of Cryptocurrencies</Label>
-          <input ref={perPageInputRef} id="perPageInput" type="text" />
+          <input
+            id="perPageInput"
+            type="number"
+            min={1}
+            value={perPage}
+            onChange={perPageChangeHandler}
+          />
         </div>
       </div>
       <div className={styles.footer}>

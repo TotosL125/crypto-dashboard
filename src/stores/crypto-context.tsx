@@ -1,5 +1,11 @@
 // library imports
-import React, { createContext, FC, ReactNode, useState } from "react";
+import React, {
+  ChangeEvent,
+  createContext,
+  FC,
+  ReactNode,
+  useState,
+} from "react";
 
 // other imports
 import useRequest from "../hooks/use-request";
@@ -11,8 +17,10 @@ type contextObj = {
   resetError: () => void;
   showSettings: boolean;
   settingsHandler: () => void;
-  urlValues: { currency: string; perPage: string };
-  urlHandler: (data: contextObj["urlValues"]) => void;
+  currency: string;
+  currencyChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
+  perPage: string;
+  perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
   cryptos: dataObj[];
   sendRequestHandler: () => void;
 };
@@ -23,8 +31,10 @@ export const CryptosContext = createContext<contextObj>({
   resetError: () => {},
   showSettings: false,
   settingsHandler: () => {},
-  urlValues: { currency: "", perPage: "" },
-  urlHandler: (data: contextObj["urlValues"]) => {},
+  currency: "",
+  currencyChangeHandler: (event: ChangeEvent<HTMLInputElement>) => {},
+  perPage: "",
+  perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => {},
   cryptos: [],
   sendRequestHandler: () => {},
 });
@@ -35,13 +45,10 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
   const [showSettings, setShowSettings] =
     useState<contextObj["showSettings"]>(false);
 
-  const [urlValues, setUrlValues] = useState<contextObj["urlValues"]>({
-    currency: "zar",
-    perPage: "10",
-  });
-  const [cryptos, setCryptos] = useState<dataObj[]>([]);
+  const [currency, setCurrency] = useState<contextObj["currency"]>("zar");
+  const [perPage, setPerPage] = useState<contextObj["perPage"]>("10");
 
-  const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${urlValues.currency}&order=market_cap_desc&per_page=${urlValues.perPage}&page=1&sparkline=false&locale=en`;
+  const [cryptos, setCryptos] = useState<dataObj[]>([]);
 
   const sendRequest = useRequest();
 
@@ -53,13 +60,19 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     setShowSettings((prevState) => !prevState);
   }
 
-  function urlHandler(data: contextObj["urlValues"]) {
-    setUrlValues(data);
+  function currencyChangeHandler(event: ChangeEvent<HTMLInputElement>) {
+    setCurrency(event.target.value);
+  }
+
+  function perPageChangeHandler(event: ChangeEvent<HTMLInputElement>) {
+    setPerPage(event.target.value);
   }
 
   async function sendRequestHandler() {
     setIsLoading(true);
     setError(undefined);
+
+    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${perPage}&page=1&sparkline=false&locale=en`;
 
     try {
       const data = await sendRequest(url);
@@ -84,8 +97,10 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     resetError,
     showSettings,
     settingsHandler,
-    urlValues,
-    urlHandler,
+    currency,
+    currencyChangeHandler,
+    perPage,
+    perPageChangeHandler,
     cryptos,
     sendRequestHandler,
   };

@@ -8,11 +8,11 @@ import Text from "./Text";
 import { CryptosContext } from "../../stores/crypto-context";
 
 const Currency: FC<{ num: number }> = (props) => {
-  const { urlValues } = useContext(CryptosContext);
+  const { currency } = useContext(CryptosContext);
 
   const numOutput = props.num.toLocaleString("en-US", {
     style: "currency",
-    currency: urlValues.currency,
+    currency: currency,
   });
   return <Text>{numOutput}</Text>;
 };
