@@ -13,7 +13,9 @@ import styles from "./styles/ErrorModal.module.css";
 import { CryptosContext } from "../../stores/crypto-context";
 import { Cross, Reload } from "../../assets/graphics";
 
+// component function
 const ErrorModal: FC = () => {
+  // declare states and functions imported from context
   const { error, resetError, sendRequestHandler } = useContext(CryptosContext);
 
   return (

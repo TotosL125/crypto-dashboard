@@ -17,7 +17,9 @@ import styles from "./styles/RootLayout.module.css";
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
 
+// component function
 const RootLayout: FC = (props) => {
+  // declare states and functions imported from context
   const { error, resetError, showSettings, settingsHandler } =
     useContext(CryptosContext);
 

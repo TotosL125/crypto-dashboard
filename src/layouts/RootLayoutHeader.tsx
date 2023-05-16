@@ -12,9 +12,11 @@ import styles from "./styles/RootLayoutHeader.module.css";
 import { CryptosContext } from "../stores/crypto-context";
 import { Back, Gear, Reload } from "../assets/graphics";
 
+// component function
 const RootLayoutHeader: FC = (props) => {
+  // declare functions imported from context
   const { sendRequestHandler, settingsHandler } = useContext(CryptosContext);
-  const params = useParams();
+  const params = useParams(); // access parameters in url
 
   return (
     <div className={styles.header}>

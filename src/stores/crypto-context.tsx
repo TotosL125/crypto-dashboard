@@ -43,19 +43,20 @@ export const CryptosContext = createContext<contextObj>({
   sendRequestHandler: () => {},
 });
 
+// component function
 const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
-  // define states that alter the display
+  // declare states that alter the display
   const [isLoading, setIsLoading] = useState<contextObj["isLoading"]>(false);
   const [error, setError] = useState<contextObj["error"]>();
   const [showSettings, setShowSettings] =
     useState<contextObj["showSettings"]>(false);
 
-  // define states that hold values
+  // declare states that hold values
   const [currency, setCurrency] = useState<contextObj["currency"]>("zar");
   const [perPage, setPerPage] = useState<contextObj["perPage"]>("10");
   const [cryptos, setCryptos] = useState<dataObj[]>([]);
 
-  // url string definition
+  // url string declaration
   const url = useMemo(() => {
     return `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${perPage}&page=1&sparkline=false&locale=en`;
   }, [currency, perPage]); // url will only change when currency and/or perPage values change

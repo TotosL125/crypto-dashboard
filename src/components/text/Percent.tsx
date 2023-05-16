@@ -4,12 +4,14 @@ import React, { FC } from "react";
 // style imports
 import styles from "./styles/Percent.module.css";
 
+// component function
 const Percent: FC<{ num: number }> = (props) => {
-  let style;
+  let style; // store style class
+
   if (props.num > 0) {
-    style = styles.good;
+    style = styles.good; // green colour
   } else {
-    style = styles.bad;
+    style = styles.bad; // red colour
   }
   return (
     <div>

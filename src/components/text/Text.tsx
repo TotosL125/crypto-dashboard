@@ -4,6 +4,7 @@ import React, { FC, ReactNode } from "react";
 // style imports
 import styles from "./styles/Text.module.css";
 
+// component function
 const Text: FC<{ children: ReactNode }> = (props) => {
   return (
     <div>

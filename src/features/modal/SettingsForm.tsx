@@ -22,8 +22,9 @@ import { CryptosContext } from "../../stores/crypto-context";
 import { Checkmark, Cross } from "../../assets/graphics";
 import useRequest from "../../hooks/use-request";
 
+// component function
 const SettingsForm: FC = () => {
-  // define state and functions imported from context
+  // declare state and functions imported from context
   const {
     currency,
     currencyChangeHandler,
