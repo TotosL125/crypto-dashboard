@@ -22,7 +22,7 @@ const Icon: FC<iconProps> = (props) => {
     styleClass = styles["icon-normal"]; // in case other strings passed
   }
 
-  return <props.icon className={styleClass} height="4vh" />;
+  return <props.icon className={styleClass} height="40px" />;
 };
 
 export default Icon;
