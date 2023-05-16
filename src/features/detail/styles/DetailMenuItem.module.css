@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 24%;
+  width: 26%;
+
+  background-color: rgba(var(--dark), 1);
+  border-radius: 12px;
+}
+
+.item-value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 2vh;
+
+  width: 60%;
+  height: 60%;
+
+  background-color: rgba(var(--accent2), 0.4);
+  border: 4px solid var(--accent1);
+  border-radius: 12px;
+}

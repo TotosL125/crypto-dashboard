@@ -1,8 +1,8 @@
 :root {
-  --dark: #262729;
-  --light: #f0f0f0;
-  --primary: #152547;
-  --secondary: #ffd700;
-  --good: #00ab66;
-  --bad: #f22300;
+  --dark: 18, 10, 4;
+  --light: 215, 224, 221;
+  --accent1: 183, 192, 200;
+  --accent2: 5, 74, 131;
+  --good: 36, 169, 114;
+  --bad: 231, 58, 17;
 }

@@ -1,0 +1,21 @@
+.good {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+
+  height: fit-content;
+  width: fit-content;
+
+  color: rgb(var(--good));
+}
+
+.bad {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+
+  height: fit-content;
+  width: fit-content;
+
+  color: rgb(var(--bad));
+}

@@ -1,0 +1,40 @@
+.link {
+  text-decoration: none;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.container {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2%;
+
+  height: fit-content;
+  width: 100%;
+
+  background-color: rgb(var(--dark));
+  border-radius: 4px;
+
+  transition-duration: 0.2s;
+}
+
+.container:hover {
+  background-color: rgba(var(--dark), 0.6);
+  box-shadow: 2px 2px 4px rgb(var(--dark));
+  transition-duration: 0.2s;
+}
+
+.item {
+  width: 18.4%;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}

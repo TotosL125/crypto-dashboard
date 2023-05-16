@@ -1,0 +1,25 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-image: radial-gradient(rgba(var(--dark), 0.8), rgb(var(--dark)));
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 88%;
+  width: 98%;
+}

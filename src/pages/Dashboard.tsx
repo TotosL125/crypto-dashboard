@@ -2,10 +2,10 @@
 import React, { FC, Fragment, useContext } from "react";
 
 // feature imports
-import DashboardList from "../features/DashboardList";
+import DashboardList from "../features/dashboard/DashboardList";
 
 // component imports
-import Title from "../components/Title";
+import Title from "../components/text/Title";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
@@ -15,7 +15,7 @@ const Dashboard: FC = () => {
 
   return (
     <Fragment>
-      <Title title="Dashboard" />
+      <Title>Dashboard</Title>
       <DashboardList currencies={cryptos} />
     </Fragment>
   );

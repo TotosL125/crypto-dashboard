@@ -1,40 +1,38 @@
 // library imports
-import React, { FC, Fragment, useContext } from "react";
+import React, { FC, useContext } from "react";
 import { Outlet } from "react-router-dom";
 
 // feature imports
-import ErrorModal from "../features/ErrorModal";
-import SettingsForm from "../features/SettingsForm";
+import ErrorModal from "../features/modal/ErrorModal";
+import SettingsForm from "../features/modal/SettingsForm";
 
 // component imports
-import ActionButton from "../components/ActionButton";
-import Modal from "../components/Modal";
+import RootLayoutHeader from "./RootLayoutHeader";
+import RootLayoutFooter from "./RootLayoutFooter";
+import Modal from "../components/other/Modal";
+
+// style imports
+import styles from "./styles/RootLayout.module.css";
 
 // other imports
 import { CryptosContext } from "../stores/crypto-context";
-import { arrow, gear } from "../assets/graphics";
 
 const RootLayout: FC = (props) => {
-  const {
-    error,
-    resetError,
-    showSettings,
-    settingsHandler,
-    sendRequestHandler,
-  } = useContext(CryptosContext);
+  const { error, resetError, showSettings, settingsHandler } =
+    useContext(CryptosContext);
 
   return (
-    <Fragment>
+    <div className={styles.layout}>
       {error && <Modal content={<ErrorModal />} onClick={resetError} />}
       {showSettings && (
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
-      <header>
-        <ActionButton func={arrow} onClick={sendRequestHandler} />
-        <ActionButton func={gear} onClick={settingsHandler} />
-      </header>
-      <Outlet />
-    </Fragment>
+      <RootLayoutHeader />
+      <div className={styles.content}>
+        <Outlet />
+      </div>
+      <RootLayoutFooter />
+    </div>
   );
 };
 

@@ -29,7 +29,7 @@ export const CryptosContext = createContext<contextObj>({
   sendRequestHandler: () => {},
 });
 
-const CryptosContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
+const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
   const [isLoading, setIsLoading] = useState<contextObj["isLoading"]>(false);
   const [error, setError] = useState<contextObj["error"]>();
   const [showSettings, setShowSettings] =
@@ -92,7 +92,7 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = ({ children }) => {
 
   return (
     <CryptosContext.Provider value={contextValue}>
-      {children}
+      {props.children}
     </CryptosContext.Provider>
   );
 };
