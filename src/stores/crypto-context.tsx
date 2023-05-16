@@ -4,6 +4,8 @@ import React, {
   createContext,
   FC,
   ReactNode,
+  useCallback,
+  useMemo,
   useState,
 } from "react";
 
@@ -11,6 +13,7 @@ import React, {
 import useRequest from "../hooks/use-request";
 import dataObj from "../assets/dataType";
 
+// define type of data accessible from the provider
 type contextObj = {
   isLoading: boolean;
   error: string | undefined;
@@ -25,6 +28,7 @@ type contextObj = {
   sendRequestHandler: () => void;
 };
 
+// create context and export as a named export
 export const CryptosContext = createContext<contextObj>({
   isLoading: false,
   error: undefined,
@@ -40,46 +44,63 @@ export const CryptosContext = createContext<contextObj>({
 });
 
 const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
+  // define states that alter the display
   const [isLoading, setIsLoading] = useState<contextObj["isLoading"]>(false);
   const [error, setError] = useState<contextObj["error"]>();
   const [showSettings, setShowSettings] =
     useState<contextObj["showSettings"]>(false);
 
+  // define states that hold values
   const [currency, setCurrency] = useState<contextObj["currency"]>("zar");
   const [perPage, setPerPage] = useState<contextObj["perPage"]>("10");
-
   const [cryptos, setCryptos] = useState<dataObj[]>([]);
 
+  // url string definition
+  const url = useMemo(() => {
+    return `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${perPage}&page=1&sparkline=false&locale=en`;
+  }, [currency, perPage]); // url will only change when currency and/or perPage values change
+
+  // define function imported from useRequest hook
   const sendRequest = useRequest();
 
-  function resetError() {
-    setError(undefined);
-  }
+  // define function to remove error
+  const resetError = useCallback(() => {
+    setError(undefined); // remove error to hide error modal
+  }, []); // only defined once at start
 
-  function settingsHandler() {
+  //define function to toggle settings modal
+  const settingsHandler = useCallback(() => {
     setShowSettings((prevState) => !prevState);
-  }
+  }, []); // only defined once at start
 
-  function currencyChangeHandler(event: ChangeEvent<HTMLInputElement>) {
-    setCurrency(event.target.value);
-  }
+  // define function to watch for changes to currency input
+  const currencyChangeHandler = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setCurrency(event.target.value);
+    },
+    []
+  ); // only defined once at start
 
-  function perPageChangeHandler(event: ChangeEvent<HTMLInputElement>) {
-    setPerPage(event.target.value);
-  }
+  // define function to watch for changes to perPage input
+  const perPageChangeHandler = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      setPerPage(event.target.value);
+    },
+    []
+  ); // only defined once at start
 
-  async function sendRequestHandler() {
+  // define function to send http requests
+  const sendRequestHandler = useCallback(async () => {
     setIsLoading(true);
-    setError(undefined);
-
-    const url = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${perPage}&page=1&sparkline=false&locale=en`;
+    setError(undefined); // remove any errors
 
     try {
-      const data = await sendRequest(url);
-      setCryptos(data);
+      const data = await sendRequest(url); // send request and await response
+      setCryptos(data); // save received data in cryptos constant
     } catch (err) {
       let errorMessage: string;
 
+      // check if error is of type Error or string
       if (err instanceof Error) {
         errorMessage = err.message;
       } else {
@@ -88,9 +109,11 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
 
       setError(errorMessage);
     }
-    setIsLoading(false);
-  }
 
+    setIsLoading(false);
+  }, [sendRequest, url]); // will only change when sendRequest and/or url changes
+
+  // define value of context provider output
   const contextValue: contextObj = {
     isLoading,
     error,
