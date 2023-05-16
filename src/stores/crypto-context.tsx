@@ -1,6 +1,5 @@
 // library imports
 import React, {
-  ChangeEvent,
   createContext,
   FC,
   ReactNode,
@@ -20,10 +19,8 @@ type contextObj = {
   resetError: () => void;
   showSettings: boolean;
   settingsHandler: () => void;
-  currency: string;
-  currencyChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
-  perPage: string;
-  perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => void;
+  urlValues: { currency: string; perPage: string };
+  urlHandler: (values: contextObj["urlValues"]) => void;
   cryptos: dataObj[];
   sendRequestHandler: () => void;
 };
@@ -35,10 +32,8 @@ export const CryptosContext = createContext<contextObj>({
   resetError: () => {},
   showSettings: false,
   settingsHandler: () => {},
-  currency: "",
-  currencyChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => {},
-  perPage: "",
-  perPageChangeHandler: (event: ChangeEvent<HTMLInputElement>) => {},
+  urlValues: { currency: "", perPage: "" },
+  urlHandler: (values: {}) => {},
   cryptos: [],
   sendRequestHandler: () => {},
 });
@@ -52,14 +47,16 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     useState<contextObj["showSettings"]>(false);
 
   // declare states that hold values
-  const [currency, setCurrency] = useState<contextObj["currency"]>("zar");
-  const [perPage, setPerPage] = useState<contextObj["perPage"]>("10");
+  const [urlValues, setUrlValues] = useState<contextObj["urlValues"]>({
+    currency: "zar",
+    perPage: "10",
+  });
   const [cryptos, setCryptos] = useState<dataObj[]>([]);
 
   // url string declaration
   const url = useMemo(() => {
-    return `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=${perPage}&page=1&sparkline=false&locale=en`;
-  }, [currency, perPage]); // url will only change when currency and/or perPage values change
+    return `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${urlValues.currency}&order=market_cap_desc&per_page=${urlValues.perPage}&page=1&sparkline=false&locale=en`;
+  }, [urlValues]); // url will only change when currency and/or perPage values change
 
   // define function imported from useRequest hook
   const sendRequest = useRequest();
@@ -74,21 +71,10 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     setShowSettings((prevState) => !prevState);
   }, []); // only defined once at start
 
-  // define function to watch for changes to currency input
-  const currencyChangeHandler = useCallback(
-    (event: ChangeEvent<HTMLSelectElement>) => {
-      setCurrency(event.target.value);
-    },
-    []
-  ); // only defined once at start
-
-  // define function to watch for changes to perPage input
-  const perPageChangeHandler = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      setPerPage(event.target.value);
-    },
-    []
-  ); // only defined once at start
+  // define function to update urlValues
+  const urlHandler = useCallback((values: contextObj["urlValues"]) => {
+    setUrlValues(values);
+  }, []); // only defined once at start
 
   // define function to send http requests
   const sendRequestHandler = useCallback(async () => {
@@ -121,10 +107,8 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     resetError,
     showSettings,
     settingsHandler,
-    currency,
-    currencyChangeHandler,
-    perPage,
-    perPageChangeHandler,
+    urlValues,
+    urlHandler,
     cryptos,
     sendRequestHandler,
   };

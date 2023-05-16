@@ -10,12 +10,12 @@ import { CryptosContext } from "../../stores/crypto-context";
 // component function
 const Currency: FC<{ num: number }> = (props) => {
   // declare state imported from context
-  const { currency } = useContext(CryptosContext);
+  const { urlValues } = useContext(CryptosContext);
 
   // format number as currency based on currency state
   const numOutput = props.num.toLocaleString("en-US", {
     style: "currency",
-    currency: currency,
+    currency: urlValues.currency,
   });
   return <Text>{numOutput}</Text>;
 };

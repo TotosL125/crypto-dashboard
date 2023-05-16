@@ -5,14 +5,15 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 
 // component imports
 import ActionButton from "../../components/button/ActionButton";
 import AltButton from "../../components/button/AltButton";
-import Title from "../../components/text/Title";
 import Label from "../../components/text/Label";
+import Title from "../../components/text/Title";
 
 //style imports
 import styles from "./styles/SettingsForm.module.css";
@@ -25,27 +26,27 @@ import useRequest from "../../hooks/use-request";
 // component function
 const SettingsForm: FC = () => {
   // declare state and functions imported from context
-  const {
-    currency,
-    currencyChangeHandler,
-    perPage,
-    perPageChangeHandler,
-    settingsHandler,
-    sendRequestHandler,
-  } = useContext(CryptosContext);
+  const { urlValues, urlHandler, settingsHandler } = useContext(CryptosContext);
 
-  // define state to store select options
+  // declare state to store select options
   const [options, setOptions] = useState<[]>([]);
+
+  // declare refs for input elements
+  const currencyInputRef = useRef<HTMLSelectElement>(null);
+  const perPageInputRef = useRef<HTMLInputElement>(null);
 
   // define function called on form submission
   const onSubmitHandler = useCallback(
     (event: FormEvent) => {
       event.preventDefault();
-
-      sendRequestHandler(); // send request based on updated information
+      const updatedValues = {
+        currency: currencyInputRef.current!.value,
+        perPage: perPageInputRef.current!.value,
+      };
+      urlHandler(updatedValues); // update context state => trigger re-render and fetch request
       settingsHandler(); // toggle settings modal
     },
-    [sendRequestHandler, settingsHandler]
+    [settingsHandler, urlHandler]
   ); // will only update when sendRequestHandler and settingsHandler update
 
   const sendRequest = useRequest(); // define request frunction imported from useRequest hook
@@ -72,9 +73,9 @@ const SettingsForm: FC = () => {
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
           <select
+            ref={currencyInputRef}
             id="currencyInput"
-            value={currency}
-            onChange={currencyChangeHandler}
+            defaultValue={urlValues.currency}
           >
             {options.map((option) => (
               <option value={option}>{option}</option>
@@ -84,11 +85,11 @@ const SettingsForm: FC = () => {
         <div className={styles["content-inputs"]}>
           <Label for="perPageInput">Number of Cryptocurrencies</Label>
           <input
+            ref={perPageInputRef}
             id="perPageInput"
             type="number"
             min={1}
-            value={perPage}
-            onChange={perPageChangeHandler}
+            defaultValue={urlValues.perPage}
           />
         </div>
       </div>
