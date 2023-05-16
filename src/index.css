@@ -3,6 +3,8 @@ body {
   font-family: "Titillium Web";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: rgb(var(--light));
 }
 
 code {

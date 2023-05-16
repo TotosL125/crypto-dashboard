@@ -16,7 +16,7 @@
   align-items: center;
   gap: 2%;
 
-  height: fit-content;
+  height: 60px;
   width: 100%;
 
   background-color: rgb(var(--dark));
