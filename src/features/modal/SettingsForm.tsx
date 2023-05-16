@@ -97,7 +97,7 @@ const SettingsForm: FC = () => {
         </div>
       </div>
       <div className={styles.footer}>
-        <AltButton type="submit" onClick={settingsHandler}>
+        <AltButton type="reset" onClick={settingsHandler}>
           <Icon icon={Cross} styleType="bad" />
         </AltButton>
         <ActionButton type="submit" onClick={() => {}}>
