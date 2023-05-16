@@ -73,11 +73,7 @@ const SettingsForm: FC = () => {
       <div className={styles.content}>
         <div className={styles["content-inputs"]}>
           <Label for="currencyInput">Currency</Label>
-          <select
-            ref={currencyInputRef}
-            id="currencyInput"
-            defaultValue={urlValues.currency}
-          >
+          <select ref={currencyInputRef} id="currencyInput">
             {options.map((option) => (
               <option key={option} value={option}>
                 {option}

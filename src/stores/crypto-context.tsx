@@ -42,7 +42,7 @@ export const CryptosContext = createContext<contextObj>({
 const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
   // declare states that alter the display
   const [isLoading, setIsLoading] = useState<contextObj["isLoading"]>(false);
-  const [error, setError] = useState<contextObj["error"]>();
+  const [error, setError] = useState<contextObj["error"]>(undefined);
   const [showSettings, setShowSettings] =
     useState<contextObj["showSettings"]>(false);
 
