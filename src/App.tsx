@@ -45,6 +45,7 @@ const router = createBrowserRouter([
   },
 ]);
 
+// component function
 function App() {
   return <RouterProvider router={router} />;
 }
