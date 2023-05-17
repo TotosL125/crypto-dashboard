@@ -11,3 +11,18 @@
 
   justify-self: flex-end;
 }
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+
+  color: rgb(var(--light));
+}
+
+.footer h4 a {
+  color: rgb(var(--light));
+}
