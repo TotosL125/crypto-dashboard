@@ -24,7 +24,7 @@ const RootLayout: FC = (props) => {
   // declare states and functions imported from context
   const { error, resetError } = useContext(CryptosContext);
 
-  const showSettings = useAppSelector((state) => state.settings);
+  const showSettings = useAppSelector((state) => state.settings.showSettings);
   const settingsHandler = useSettings();
 
   return (
