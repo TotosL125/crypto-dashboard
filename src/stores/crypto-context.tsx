@@ -18,8 +18,6 @@ type contextObj = {
   isLoading: boolean;
   error: string | undefined;
   resetError: () => void;
-  showSettings: boolean;
-  settingsHandler: () => void;
   urlValues: { currency: string; perPage: string };
   urlHandler: (values: contextObj["urlValues"]) => void;
   cryptos: dataObj[];
@@ -31,8 +29,6 @@ export const CryptosContext = createContext<contextObj>({
   isLoading: false,
   error: undefined,
   resetError: () => {},
-  showSettings: false,
-  settingsHandler: () => {},
   urlValues: { currency: "", perPage: "" },
   urlHandler: (values: {}) => {},
   cryptos: [],
@@ -44,8 +40,6 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
   // declare states that alter the display
   const [isLoading, setIsLoading] = useState<contextObj["isLoading"]>(false);
   const [error, setError] = useState<contextObj["error"]>(undefined);
-  const [showSettings, setShowSettings] =
-    useState<contextObj["showSettings"]>(false);
 
   // declare states that hold values
   const [urlValues, setUrlValues] = useState<contextObj["urlValues"]>({
@@ -65,11 +59,6 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
   // define function to remove error
   const resetError = useCallback(() => {
     setError(undefined); // remove error to hide error modal
-  }, []); // only defined once at start
-
-  //define function to toggle settings modal
-  const settingsHandler = useCallback(() => {
-    setShowSettings((prevState) => !prevState);
   }, []); // only defined once at start
 
   // define function to update urlValues
@@ -110,8 +99,6 @@ const CryptosContextProvider: FC<{ children?: ReactNode }> = (props) => {
     isLoading,
     error,
     resetError,
-    showSettings,
-    settingsHandler,
     urlValues,
     urlHandler,
     cryptos,

@@ -23,11 +23,12 @@ import styles from "./styles/SettingsForm.module.css";
 import { CryptosContext } from "../../stores/crypto-context";
 import { Checkmark, Cross } from "../../assets/graphics";
 import useRequest from "../../hooks/use-request";
+import useSettings from "../../hooks/use-settings";
 
 // component function
 const SettingsForm: FC = () => {
   // declare state and functions imported from context
-  const { urlValues, urlHandler, settingsHandler } = useContext(CryptosContext);
+  const { urlValues, urlHandler } = useContext(CryptosContext);
 
   // declare state to store select options
   const [options, setOptions] = useState<[]>([]);
@@ -35,6 +36,8 @@ const SettingsForm: FC = () => {
   // declare refs for input elements
   const currencyInputRef = useRef<HTMLSelectElement>(null);
   const perPageInputRef = useRef<HTMLInputElement>(null);
+
+  const settingsHandler = useSettings(); // define settings handler function from useSettings hook
 
   // define function called on form submission
   const onSubmitHandler = useCallback(
@@ -50,7 +53,7 @@ const SettingsForm: FC = () => {
     [settingsHandler, urlHandler]
   ); // will only update when sendRequestHandler and settingsHandler update
 
-  const sendRequest = useRequest(); // define request frunction imported from useRequest hook
+  const sendRequest = useRequest(); // define request frunction from useRequest hook
 
   // define function to fetch currency options from CoinGecko
   const getOptions = useCallback(async () => {

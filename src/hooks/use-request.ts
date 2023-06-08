@@ -16,6 +16,7 @@ const useRequest = () => {
     const data = await resp.json(); // get data from response
     return data;
   }, []); // function only defined once
+
   return sendRequest; // return the function
 };
 
