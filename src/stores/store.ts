@@ -2,12 +2,13 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
 // slice imports
+import cryptosSlice from "./cryptos/cryptosSlice";
 import settingsSlice from "./settings/settingsSlice";
 
 // create combined reducer from slice reducers
-const combinedReducer = combineReducers({
+/* const combinedReducer = combineReducers({
   settings: settingsSlice,
-});
+}); */
 
 // create root reducer from combined reducer
 /* const rootReducer = (state: any, action: AnyAction) => {
@@ -16,7 +17,10 @@ const combinedReducer = combineReducers({
 
 // configure store
 const store = configureStore({
-  reducer: combinedReducer,
+  reducer: {
+    settings: settingsSlice,
+    cryptos: cryptosSlice,
+  },
 });
 
 // exports

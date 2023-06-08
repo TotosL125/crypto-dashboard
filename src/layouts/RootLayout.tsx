@@ -1,5 +1,5 @@
 // library imports
-import { FC, useContext } from "react";
+import { FC } from "react";
 import { Outlet } from "react-router-dom";
 
 // feature imports
@@ -15,21 +15,27 @@ import Modal from "../components/other/Modal";
 import styles from "./styles/RootLayout.module.css";
 
 // other imports
-import { CryptosContext } from "../stores/crypto-context";
 import useSettings from "../hooks/use-settings";
-import { useAppSelector } from "../hooks/hooks";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { resetError } from "../stores/cryptos/cryptosSlice";
 
 // component function
 const RootLayout: FC = (props) => {
-  // declare states and functions imported from context
-  const { error, resetError } = useContext(CryptosContext);
+  const dispatch = useAppDispatch();
 
+  // redux error state
+  const error = useAppSelector((state) => state.cryptos.error);
+  const resetErrorHandler = () => {
+    dispatch(resetError());
+  };
+
+  // redux settings state
   const showSettings = useAppSelector((state) => state.settings.showSettings);
   const settingsHandler = useSettings();
 
   return (
     <div className={styles.layout}>
-      {error && <Modal content={<ErrorModal />} onClick={resetError} />}
+      {error && <Modal content={<ErrorModal />} onClick={resetErrorHandler} />}
       {showSettings && (
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}
