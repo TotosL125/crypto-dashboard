@@ -15,21 +15,21 @@ import Modal from "../components/other/Modal";
 import styles from "./styles/RootLayout.module.css";
 
 // other imports
-//import { CryptosContext } from "../stores/crypto-context";
+import { CryptosContext } from "../stores/crypto-context";
 import useSettings from "../hooks/use-settings";
 import { useAppSelector } from "../hooks/hooks";
 
 // component function
 const RootLayout: FC = (props) => {
   // declare states and functions imported from context
-  //const { error, resetError } = useContext(CryptosContext);
+  const { error, resetError } = useContext(CryptosContext);
 
   const showSettings = useAppSelector((state) => state.settings);
   const settingsHandler = useSettings();
 
   return (
     <div className={styles.layout}>
-      {/* {error && <Modal content={<ErrorModal />} onClick={resetError} />} */}
+      {error && <Modal content={<ErrorModal />} onClick={resetError} />}
       {showSettings && (
         <Modal content={<SettingsForm />} onClick={settingsHandler} />
       )}

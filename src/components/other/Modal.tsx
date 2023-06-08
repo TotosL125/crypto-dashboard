@@ -5,18 +5,24 @@ import { createPortal } from "react-dom";
 // style imports
 import styles from "./styles/Modal.module.css";
 
+// define type
+interface Imodal {
+  content: ReactNode;
+  onClick: () => void;
+}
+
 // component function for backdrop
-const Backdrop: FC<{ onClick: () => void }> = (props) => {
+const Backdrop: FC<{ onClick: Imodal["onClick"] }> = (props) => {
   return <div className={styles.backdrop} onClick={props.onClick} />;
 };
 
 // component function for modal overlay
-const Overlay: FC<{ content: ReactNode }> = (props) => {
+const Overlay: FC<{ content: Imodal["content"] }> = (props) => {
   return <div className={styles.overlay}>{props.content}</div>;
 };
 
 // component function
-const Modal: FC<{ content: ReactNode; onClick: () => void }> = (props) => {
+const Modal: FC<Imodal> = (props) => {
   // get element where backdrop must be displayed
   const backdropElement = document.getElementById(
     "backdrop-root"
